@@ -17,11 +17,16 @@
 ## Flux
 ### Views (React Components)
 
+
 ### Stores
+
 
 ### Actions
 
+
+
 ### ApiUtil
 
+
+
 ## Gems/Libraries
-* BCrypt (Gem)

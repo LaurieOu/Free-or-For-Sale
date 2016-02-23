@@ -1,26 +1,26 @@
 # View Wireframes
 
 ## Welcome Page
-![welcome page]
+![welcomePage]
 
 ## Welcome Page/Sign In/Up
-![Sign In/Up]
+![SignInUp]
 
 ## University Page
-![University page]
+![UniversityPage]
 
 ## University Page / Sell Something
-![Sell Something]
+![SellSomething]
 
 ## User's Home Page
-![User's Home Page]
+![UserHomePage]
 
 ## User's Home Page / Message Box
-![Message Box]
+![MessageBox]
 
-[welcome page]: ./wireframes/WelcomePage.png
-[Sign In/Up]: ./wireframes/Sign_In-Up.png
-[University page]: ./wireframes/University_Page.png
-[Sell Something]: ./wireframes/Sell_Something.png
-[User's Home Page]: ./wireframes/User's_Home_page.png
-[Message Box]: ./wireframes/Message_Box.png
+[welcomePage]: ./wireframes/WelcomePage.png
+[SignInUp]: ./wireframes/SignInUp.png
+[UniversityPage]: ./wireframes/UniversityPage.png
+[SellSomething]: ./wireframes/SellSomething.png
+[UserHomePage]: ./wireframes/UserHomePage.png
+[MessageBox]: ./wireframes/MessageBox.png

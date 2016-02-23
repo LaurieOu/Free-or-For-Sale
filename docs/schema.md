@@ -1,51 +1,81 @@
 # Schema Information
 
-## Post/Item for Sale
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-description | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-price       | integer   | not null, foreign key (references users), indexed
-location    | string    |
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+Username        | string    | not null, indexed, unique
+email           | string    | not null, indexed, unique
+university_id   | integer   | not null, foreign key (references users), indexed
+password_digest | string    | not null
+session_token   | string    | not null, indexed, unique
 
-## Messages
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-body        | text      |
-date        | datetime  | not null
 
 ## University
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-item_id     | integer   | not null, foreign key (references users), indexed
+name        | string    | not null
 
 
-## Message Box
+## Listing
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
+title        | string    | not null
+description  | text      |
+price        | integer   | not null
+university_id| integer   | not null, foreign key (references users), indexed
+user_id      | integer   | not null, foreign key (references users), indexed
+category_id  | integer   | not null, foreign key, indexed
+archived     | boolean   | not null, default false
+address      | string    |
+
+
+## Category
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
+category_name| string    | not null, unique
+
+
+## Likes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-message_id  | integer   | not null, foreign key (references notes), indexed
-date        | datetime  | not null
+listing_id  | integer   | not null, foreign key (references users), indexed
+
+
+## Starred
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
+listing_id  | integer   | not null, foreign key (references users), indexed
+
+
+## Comments
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+body        | text      | not null
+user_id     | integer   | not null, foreign key (references users), indexed
+listing_id  | integer   | not null, foreign key (references users), indexed
+
 
 ## Pictures
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+listing_id  | integer   | not null, foreign key (references users), indexed
+
+
+## Messages
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-item_id     | integer   | not null, foreign key (references users), indexed
-
-
-## users
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
-password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
+receiver_id | integer   | not null, foreign key (references users), indexed
+item_title  | string    | not null
+body        | text      |

@@ -2,46 +2,33 @@
 
 ## Rails
 ### Models
-* University
-* Post
-* Messages
+* Likes
+* Comments
+* Starred
+* Pictures
 
 ### Controllers
-* UniversityController (create, new)
-* MessagesController (create, new, index, show, update, destroy )
-* Api::PostController (create, destroy, index, show, update)
+* Api::CommentsController (create, destroy, index, show, update)
+* Api::PicturesController (create, destroy, index, show, update)
+
 
 
 ### Views
-* university/posts/index.json.jbuilder
-* user/messages/index.json.jbuilder
-* user/message/show.json.jbuilder
+* comments/index.json.jbuilder
+* comments/show.json.jbuilder
+* likes/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* PostsIndex
-  - PostIndexItem
-* PostForm
-* SearchIndex
+
 
 ### Stores
-* Post
+
 
 ### Actions
-* ApiActions.receiveAllPosts -> triggered by ApiUtil
-* ApiActions.receiveSinglePosts
-* ApiActions.deletePosts
-* PostActions.fetchAllPosts -> triggers ApiUtil
-* PostActions.fetchSinglePost
-* PostActions.createPosts
-* PostActions.editPosts
-* PostActions.destroyPosts
+
 
 ### ApiUtil
-* ApiUtil.fetchAllPosts
-* ApiUtil.fetchSinglePost
-* ApiUtil.createPost
-* ApiUtil.editPost
-* ApiUtil.destroyPost
+
 
 ## Gems/Libraries

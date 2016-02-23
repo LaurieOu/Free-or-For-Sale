@@ -2,6 +2,8 @@
 
 ## Rails
 ### Models
+Category
+Listing 
 
 ### Controllers
 
@@ -9,30 +11,25 @@
 
 ## Flux
 ### Views (React Components)
-* PostsIndex
-  - PostsIndexItem
-* PostForm
+* ListingsIndex
+  - ListingsIndexItem
+
 
 ### Stores
-* Post
-* User
+* Listing
+
 
 ### Actions
-* ApiActions.receiveAllPosts -> triggered by ApiUtil
-* ApiActions.receiveSinglePosts
-* ApiActions.deletePosts
-* PostActions.fetchAllPosts -> triggers ApiUtil
-* PostActions.fetchSinglePost
-* PostActions.createPosts
-* PostActions.editPosts
-* PostActions.destroyPosts
+* ApiActions.receiveAllListing -> triggered by ApiUtil
+* ApiActions.deleteListing
+* ApiActions.createListing
+* ApiActions.editListing
 
 ### ApiUtil
-* ApiUtil.fetchAllPosts
-* ApiUtil.fetchSinglePost
-* ApiUtil.createPost
-* ApiUtil.editPost
-* ApiUtil.destroyPost
+* ApiUtil.fetchAllListings
+* ApiUtil.createListing
+* ApiUtil.editListing
+* ApiUtil.destroyListing
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)
