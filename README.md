@@ -1,4 +1,4 @@
-# FresherNote
+# Free or For Sale
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
