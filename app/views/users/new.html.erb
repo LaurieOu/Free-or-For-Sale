@@ -1,0 +1,53 @@
+<div class="auth-body">
+  <div class="auth-container">
+
+    <div class="fofs-title">
+      <h2>Free Or For Sale</h2>
+    </div>
+
+      <div class='form-input'>
+        <h1 class='whitetext'>Sign Up</h1>
+
+        <form class="form-group" action="<%= users_url %>" method="post">
+          <%= form_token %>
+
+          <label class='whitetext' for="Username">Username</label>
+          <input type="text" name="user[username]">
+          <br>
+          <br>
+
+          <label class='whitetext' for="Username">Email</label>
+          <input type="text" name="user[email]">
+          <br>
+          <br>
+
+          <label class='whitetext' for="user_password">Password</label>
+          <input type="password" name="user[password]">
+          <br>
+          <br>
+
+          <label class='whitetext' for="University">University</label>
+          <select type="text" name="user[university_id]">
+            <option></option>
+            <option value='<%=1%>'>UCLA</option>
+            <option value='<%=2%>'>UCBerkeley</option>
+            <option value='<%=3%>'>UCSB</option>
+            <option value='<%=4%>'>NYU</option>
+            <option value='<%=5%>'>Duke</option>
+          </select>
+          <br>
+          <br>
+
+          <input type="submit" value="Sign Up">
+        </form>
+    </div>
+    <br>
+    <br>
+
+    <div class="whitetext">
+      Already a member?
+      <a href="/session/new" class="link">Sign in here!</a>
+    </div>
+
+  </div>
+</div>

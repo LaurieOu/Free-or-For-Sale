@@ -1,0 +1,34 @@
+<div class="auth-body">
+  <div class="auth-container">
+
+    <div class="fofs-title">
+      <h2>Free Or For Sale</h2>
+    </div>
+
+      <div class='form-home'>
+        <h1 class='whitetext'>Sign In</h1>
+
+        <form class="form-group" action="<%= session_url %>" method="post">
+          <%= form_token %>
+
+          <label class='whitetext' for="Username">Username</label>
+          <input type="text" name="user[username]">
+          <br>
+          <br>
+          <label class='whitetext' for="user_password">Password</label>
+          <input type="password" name="user[password]">
+          <br>
+          <br>
+          <input type="submit" value="Sign In">
+        </form>
+    </div>
+    <br>
+    <br>
+
+    <div class="whitetext">
+      New User?
+      <a href="/users/new" class="link">Sign up here!</a>
+    </div>
+
+  </div>
+</div>
