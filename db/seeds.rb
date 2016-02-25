@@ -72,3 +72,38 @@ User.create!([
   {username: "thora_bogisich", email: "therese@gibson.com", password_digest: "$2a$10$d./iQSAkrK8KH9oUFrbvYuoh0jFCPGT46E4ZxBFS04638xScNw0gK", session_token: "Wldyi9D4-UupnzKN7nGsMQ", university_id: 4},
   {username: "orlo_ward", email: "amelia.tromp@jacobs.name", password_digest: "$2a$10$eSRLWYqQzaHvp6tvnQYHAuQAhUheIL.4xI/jHtqd.6XRa1S/fgH8O", session_token: "v73b__sdUbBI9HwlYR6bGA", university_id: 1},
 ])
+
+University.create!([
+  {name: "UCLA"},
+  {name: "Berkeley"},
+  {name: "UCSB"},
+  {name: "NYU"},
+  {name: "Duke"}
+])
+
+Category.create!([
+  {category_name: "Most Recent" },
+  {category_name: "Books" },
+  {category_name: "Furniture" },
+  {category_name: "Housing" },
+  {category_name: "Clothes" },
+  {category_name: "Electronics" },
+  {category_name: "Free" },
+  {category_name: "Services" },
+  {category_name: "Jobs/Internships" },
+  {category_name: "Music" },
+  {category_name: "Other" }
+  ])
+
+Listing.create!([
+  {title: "Of Mice and Men", description: "It's about Lenny and George. They do stuff.", price: 3, university_id: 1, category_id: 2, user_id: 1, archived: true},
+  {title: "Lamp", description: "Fiat Lux", price: 10, university_id: 1, category_id: 3, user_id: 2, archived: true},
+  {title: "Pink Palace", description: "Where the princess live", price: 4900, university_id: 1, category_id: 4, user_id: 3, archived: true},
+  {title: "nice dress", description: "staring at the sunset ;)", price: 20, university_id: 1, category_id: 5, user_id: 4, archived: true},
+  {title: "iPod", description: "plays music", price: 1000, university_id: 1, category_id: 6, user_id: 5, archived: true},
+  {title: "air", description: "head", price: 2, university_id: 1, category_id: 7, user_id: 6, archived: true},
+  {title: "services", description: "professional cuddler", price: 60, university_id: 1, category_id: 8, user_id: 7, archived: true},
+  {title: "in house cook", description: "professional", price: 100, university_id: 1, category_id: 9, user_id: 8, archived: true},
+  {title: "taylor swift", description: "YES", price: 10, university_id: 1, category_id: 10, user_id: 9, archived: true},
+  {title: "self portrait", description: "of laurie", price: 1000000, university_id: 1, category_id: 11, user_id: 1, archived: true}
+  ])
