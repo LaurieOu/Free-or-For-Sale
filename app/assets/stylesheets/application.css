@@ -72,3 +72,7 @@
 .link{
   color: white;
 }
+
+.category:hover {
+  background-color: yellow;
+}

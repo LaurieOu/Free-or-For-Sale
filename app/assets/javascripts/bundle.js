@@ -19675,6 +19675,7 @@
 	var ListingsStore = __webpack_require__(160);
 	var apiUtil = __webpack_require__(181);
 	var NewListing = __webpack_require__(183);
+	var Categories = __webpack_require__(242);
 	
 	var Listings = React.createClass({
 	  displayName: 'Listings',
@@ -19697,6 +19698,7 @@
 	      'article',
 	      null,
 	      React.createElement(NewListing, null),
+	      React.createElement(Categories, null),
 	      React.createElement(
 	        'ul',
 	        null,
@@ -31614,6 +31616,86 @@
 	};
 	
 	module.exports = CategoriesConstants;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var CategoriesStore = __webpack_require__(243);
+	var apiUtil = __webpack_require__(181);
+	
+	var Categories = React.createClass({
+	  displayName: 'Categories',
+	
+	  getInitialState: function () {
+	    return { categories: CategoriesStore.all(),
+	      selectedCategory: "" };
+	  },
+	  _onChange: function () {
+	    this.setState({ categories: CategoriesStore.all() });
+	  },
+	  componentDidMount: function () {
+	    this.categoriesListener = CategoriesStore.addListener(this._onChange);
+	    apiUtil.fetchAllCategories();
+	  },
+	  compomentWillUnmount: function () {
+	    this.categoriesListener.remove();
+	  },
+	  handleClick: function (e) {
+	    console.log(e.currentTarget.innerHTML);
+	    this.setState({ selectedCategory: e.currentTarget.innerHTML });
+	  },
+	  render: function () {
+	    return React.createElement(
+	      'article',
+	      null,
+	      React.createElement(
+	        'ul',
+	        null,
+	        this.state.categories.map(function (category) {
+	          return React.createElement(
+	            'li',
+	            { key: category.id, onClick: this.handleClick, className: 'category' },
+	            category.category_name
+	          );
+	        }, this)
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = Categories;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Store = __webpack_require__(161).Store;
+	var CategoriesConstants = __webpack_require__(241);
+	var AppDispatcher = __webpack_require__(178);
+	var CategoriesStore = new Store(AppDispatcher);
+	
+	var _categories = [];
+	
+	var resetCategories = function (categories) {
+	  _categories = categories;
+	};
+	
+	CategoriesStore.all = function (categories) {
+	  return _categories.slice(0);
+	};
+	
+	CategoriesStore.__onDispatch = function (payload) {
+	  switch (payload.actionType) {
+	    case CategoriesConstants.CATEGORIES_RECEIVED:
+	      resetCategories(payload.categories);
+	      CategoriesStore.__emitChange();
+	      break;
+	  }
+	};
+	
+	module.exports = CategoriesStore;
 
 /***/ }
 /******/ ]);

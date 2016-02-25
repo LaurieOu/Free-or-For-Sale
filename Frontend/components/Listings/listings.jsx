@@ -2,6 +2,7 @@ var React = require('react');
 var ListingsStore = require('../../stores/listings');
 var apiUtil = require('../../util/apiUtil');
 var NewListing = require('./newListing');
+var Categories = require('../categories/categories');
 
 
 var Listings = React.createClass({
@@ -22,6 +23,7 @@ var Listings = React.createClass({
     return(
       <article>
         <NewListing />
+        <Categories />
         <ul>
           {this.state.listings.map(function(listing) {
             return (<li key={listing.id}>Title: {listing.title};  Description: {listing.description}</li>)

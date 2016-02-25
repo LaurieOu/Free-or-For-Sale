@@ -1,10 +1,10 @@
 class Api::CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all 
+    @categories = Category.all
 
-    if (params[:university])
-      @listings = Listing.where(university_id: params[:university])
+    if (params[:category])
+      @categories = Category.where(category_id: params[:category])
     end
   end
 end
