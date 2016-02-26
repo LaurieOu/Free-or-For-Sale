@@ -10,6 +10,16 @@ var apiUtil = {
       }
     });
   },
+  fetchSingleListings: function(id) {
+    $.ajax({
+      url: 'api/listings',
+      data: {"categories": id},
+      type: 'GET',
+      success: function (listings) {
+        ApiActions.receiveAllListings(listings);
+      }
+    });
+  },
   fetchAllCategories: function() {
     $.ajax({
       url: 'api/categories',
@@ -20,11 +30,24 @@ var apiUtil = {
     });
   },
   createListing: function(newlisting){
-  $.post('api/listings', { listing: newlisting }, function(listing) {
-    ApiActions.receiveNewListing(listing);
-    });
-  },
+    $.post('api/listings', { listing: newlisting }, function(listing) {
+      ApiActions.receiveNewListing(listing);
+      });
+    },
 };
 
+// createNewListing: function(listing, callback){
+//   $.ajax({
+//     url: "api/listings",
+//     method: "POST",
+//     data: { listing: listing },
+//     success: function (listing) {
+//       callback();
+//     },
+//     error: function(error) {
+//       ApiActions.formError(error);
+//     }
+//   });
+// },
 
 module.exports = apiUtil;

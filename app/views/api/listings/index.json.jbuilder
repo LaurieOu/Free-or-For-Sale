@@ -1,6 +1,6 @@
 json.array! @listings do |listing|
   # json.title listing.title
-  json.extract!(listing, :title, :description, :price, :id)
+  json.extract!(listing, :title, :description, :price, :id, :category_id)
   json.university listing.university.name
   json.user listing.user.username
   json.category listing.category.category_name

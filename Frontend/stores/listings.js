@@ -9,12 +9,12 @@ var resetListings = function(listings) {
   _listings = listings;
 };
 
-ListingsStore.all = function(listings) {
-  return _listings.slice(0);
+var addNewListing = function(newListing) {
+  _listings.unshift(newListing);
 };
 
-ListingsStore.addNewListing = function(newListing) {
-  _listings.unshift(newListing);
+ListingsStore.all = function(listings) {
+  return _listings.slice(0);
 };
 
 ListingsStore.__onDispatch = function (payload) {

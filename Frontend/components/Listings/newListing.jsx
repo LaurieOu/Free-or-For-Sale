@@ -9,7 +9,8 @@ var NewListing = React.createClass(
     getInitialState: function(){
       return {
         expanded: false,
-        formInfo: {title: "", description: "", price: "", address: "", category_id: "", university_id: ""}
+        title: "", description: "",
+                   price: "", address: "", category_id: this.props.category_id
       };
     },
     toggle: function(event){
@@ -31,22 +32,23 @@ var NewListing = React.createClass(
     handleSubmit: function(e) {
       e.preventDefault();
       newListing = {};
+      var formInfo = Object.keys(this.state).slice(1);
 
-      Object.keys(this.state.formInfo).forEach(function (key) {
-        { newListing[key] = this.state.formInfo[key]; }
+      formInfo.forEach(function (key) {
+        { newListing[key] = this.state[key]; }
       }.bind(this))
 
-      apiUtil.createListing(newListing);
+      apiUtil.createListing(this.state);
     },
     render: function() {
       var extraContent = "";
       if(this.state.expanded) {
         extraContent = (
           <div>
-            <input value="Add a price" name="listing[price]" onChange={this.handlePriceChange}></input><br/>
-            <input value="Address" name="listing[address]" onChange={this.handleAdressChange}></input><br/>
-            <input value="Describe your item (optional)" name="listing[description]" onChange={this.handleDescriptionChange}></input><br/>
-            <input type="submit" value="Submit"></input>
+            <input type="text" value={this.state.price} placeholder="Add a price" name="listing[price]" onChange={this.handlePriceChange}/><br/>
+            <input type="text" value={this.state.address} placeholder="Address" name="listing[address]" onChange={this.handleAdressChange}/><br/>
+            <input type="text" value={this.state.description} placeholder="Describe your item (optional)" name="listing[description]" onChange={this.handleDescriptionChange}/><br/>
+            <input type="submit" value="Submit"/>
           </div>
         )
       };
@@ -54,9 +56,11 @@ var NewListing = React.createClass(
       return (
         <form onSubmit={this.handleSubmit}>
           <input onClick={this.toggle}
-           value="What are you selling?"
+           type="text"
+           placeholder="What are you selling?"
+           value={this.state.title}
            name="listing[title]"
-           onChange={this.handleTitleChange}></input><br/>
+           onChange={this.handleTitleChange}/><br/>
 
           {extraContent}
         </form>
@@ -65,10 +69,3 @@ var NewListing = React.createClass(
   });
 
 module.exports = NewListing;
-
-// params.require(:listing).permit(
-//   :title, :description,
-//   :price, :address,
-//   :university_id, :user_id,
-//   :category_id
-//   )

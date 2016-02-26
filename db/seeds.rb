@@ -82,7 +82,6 @@ University.create!([
 ])
 
 Category.create!([
-  {category_name: "Most Recent" },
   {category_name: "Books" },
   {category_name: "Furniture" },
   {category_name: "Housing" },
@@ -96,14 +95,14 @@ Category.create!([
   ])
 
 Listing.create!([
-  {title: "Of Mice and Men", description: "It's about Lenny and George. They do stuff.", price: 3, university_id: 1, category_id: 2, user_id: 1, archived: true},
-  {title: "Lamp", description: "Fiat Lux", price: 10, university_id: 1, category_id: 3, user_id: 2, archived: true},
-  {title: "Pink Palace", description: "Where the princess live", price: 4900, university_id: 1, category_id: 4, user_id: 3, archived: true},
-  {title: "nice dress", description: "staring at the sunset ;)", price: 20, university_id: 1, category_id: 5, user_id: 4, archived: true},
-  {title: "iPod", description: "plays music", price: 1000, university_id: 1, category_id: 6, user_id: 5, archived: true},
-  {title: "air", description: "head", price: 2, university_id: 1, category_id: 7, user_id: 6, archived: true},
-  {title: "services", description: "professional cuddler", price: 60, university_id: 1, category_id: 8, user_id: 7, archived: true},
-  {title: "in house cook", description: "professional", price: 100, university_id: 1, category_id: 9, user_id: 8, archived: true},
-  {title: "taylor swift", description: "YES", price: 10, university_id: 1, category_id: 10, user_id: 9, archived: true},
-  {title: "self portrait", description: "of laurie", price: 1000000, university_id: 1, category_id: 11, user_id: 1, archived: true}
+  {title: "Of Mice and Men", description: "It's about Lenny and George. They do stuff.", price: 3, university_id: 1, category_id: 1, user_id: 1, archived: true},
+  {title: "Lamp", description: "Fiat Lux", price: 10, university_id: 1, category_id: 2, user_id: 2, archived: true},
+  {title: "Pink Palace", description: "Where the princess live", price: 4900, university_id: 1, category_id: 3, user_id: 3, archived: true},
+  {title: "nice dress", description: "staring at the sunset ;)", price: 20, university_id: 1, category_id: 4, user_id: 4, archived: true},
+  {title: "iPod", description: "plays music", price: 1000, university_id: 1, category_id: 5, user_id: 5, archived: true},
+  {title: "air", description: "head", price: 2, university_id: 1, category_id: 6, user_id: 6, archived: true},
+  {title: "services", description: "professional cuddler", price: 60, university_id: 1, category_id: 7, user_id: 7, archived: true},
+  {title: "in house cook", description: "professional", price: 100, university_id: 1, category_id: 8, user_id: 8, archived: true},
+  {title: "taylor swift", description: "YES", price: 10, university_id: 1, category_id: 9, user_id: 9, archived: true},
+  {title: "self portrait", description: "of laurie", price: 1000000, university_id: 1, category_id: 10, user_id: 1, archived: true}
   ])

@@ -1,19 +1,24 @@
 class Api::ListingsController < ApplicationController
 
   def index
-    @listings = Listing.all
 
-    if (params[:university])
-      @listings = Listing.where(university_id: params[:university])
+    if (params[:categories])
+      @listings = Listing.where(category_id: params[:categories], university_id: current_user.university_id)
+    else
+      @listings = Listing.where(university_id: current_user.university_id).includes(:university, :user, :category)
     end
   end
 
-  def create
-    @listing = Listing.create!(listing_params)
 
+  def create
+    input_hash = {university_id: current_user.university_id, user_id: current_user.id, archived: true}
+    inputParams = listing_params.merge(input_hash)
+
+    @listing = Listing.create!(inputParams)
     if @listing.save
-      render json: create
+      render json: @listing
     end
+
   end
 
   # def create
@@ -46,9 +51,7 @@ class Api::ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit(
       :title, :description,
-      :price, :address,
-      :university_id, :user_id,
-      :category_id
+      :price, :address, :category_id
       )
   end
 

@@ -4,6 +4,20 @@
   <title>FreeOrForSale</title>
   <%= stylesheet_link_tag 'application', media: 'all'%>
   <%= csrf_meta_tags %>
+  <% if current_user %>
+  <% username = current_user.username %>
+    <script type="text/javascript">
+      window.user = {
+        username: "<%=username%>",
+      };
+    </script>
+  <% else %>
+    <script type="text/javascript">
+      window.user = {
+        username: undefined,
+      };
+    </script>
+  <% end %>
 </head>
 <body>
 
