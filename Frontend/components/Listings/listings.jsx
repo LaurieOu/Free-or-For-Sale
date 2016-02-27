@@ -3,6 +3,7 @@ var ListingsStore = require('../../stores/listings');
 var apiUtil = require('../../util/apiUtil');
 var Categories = require('../categories/categories');
 var LoginBar = require('../navigation/login');
+var MostRecentItems = require('../categories/mostRecentItemsForm');
 
 
 var Listings = React.createClass({
@@ -20,13 +21,15 @@ var Listings = React.createClass({
     this.listingsListener.remove();
   },
   render: function() {
-    debugger;
+
     return(
       <article>
         <LoginBar />
         <Categories />
+        <MostRecentItems />
         <ul>
           {this.state.listings.map(function(listing) {
+            //make this ListingIndexItem
             return (<li key={listing.id}>Title: {listing.title};  Description: {listing.description}</li>)
           })}
         </ul>

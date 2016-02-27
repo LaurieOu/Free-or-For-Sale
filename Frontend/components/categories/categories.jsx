@@ -4,8 +4,6 @@ var apiUtil = require('../../util/apiUtil');
 var NewListing = require('../Listings/newListing');
 
 
-
-
 var Categories = React.createClass({
   getInitialState: function() {
     return {categories: CategoriesStore.all(), category_id: "", renderNewListing: false}
@@ -40,9 +38,8 @@ var Categories = React.createClass({
         <ul>
           {this.state.categories.map(function(category) {
             return (
-              <article>
                 <li key={category.id} id={category.id} onClick={this.handleClick} className="category">{category.category_name}</li>
-              </article>)
+            );
           }, this)}
         </ul>
         {newListingForm}

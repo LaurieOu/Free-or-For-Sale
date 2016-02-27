@@ -45,8 +45,8 @@ authentication (using BCrypt). If a user clicks the 'find your university'
 button, they will be directed to a page with a drop down box where they can
 select then view any university's Free and For Sale page.
 
-- [ ] create new project
-- [ ] create `User` model
+- [x] create new project
+- [x] create `User` model
 - [ ] create `University` model
 - [ ] create `University` Flux/React components
 - [ ] authentication

@@ -1,4 +1,7 @@
 var React = require('react');
+var browserHistory = require('react-router').browserHistory;
+var apiUtil = require('../../util/apiUtil');
+
 
 var Login = React.createClass({
 
@@ -13,7 +16,8 @@ var Login = React.createClass({
     });
   },
   handleHomeClick: function() {
-    this.props.history.pushState(null, "/");
+    apiUtil.fetchAllListings();
+    browserHistory.push("/");
   },
   render: function() {
     var login;
