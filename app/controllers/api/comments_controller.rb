@@ -6,7 +6,8 @@ class Api::CommentsController < ApplicationController
 
     @comment = Comment.new(inputParams)
     if @comment.save
-      render json: @comment
+      @listings = Listing.all
+      render "api/listings/index"
     else
       render json: {}, status: 420
     end

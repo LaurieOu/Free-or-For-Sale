@@ -35,24 +35,10 @@ var apiUtil = {
       });
     },
   createComment: function(newComment) {
-    $.post('api/comments', {comment: newComment}, function(comment) {
-      ApiActions.receiveNewComment(comment);
+    $.post('api/comments', {comment: newComment}, function(listings) {
+      ApiActions.receiveAllListings(listings);
     });
   }
 };
-
-// createNewListing: function(listing, callback){
-//   $.ajax({
-//     url: "api/listings",
-//     method: "POST",
-//     data: { listing: listing },
-//     success: function (listing) {
-//       callback();
-//     },
-//     error: function(error) {
-//       ApiActions.formError(error);
-//     }
-//   });
-// },
 
 module.exports = apiUtil;
