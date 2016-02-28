@@ -1,6 +1,7 @@
 var AppDispatcher = require('../dispatcher/dispatcher');
 var ListingsConstants = require('../constants/listings_constants');
 var CategoriesConstants = require('../constants/categories_constants');
+var CommentsConstants = require('../constants/comments_constants');
 
 
 ApiActions = {
@@ -20,6 +21,12 @@ ApiActions = {
     AppDispatcher.dispatch({
       actionType: CategoriesConstants.CATEGORIES_RECEIVED,
       categories: categories
+    });
+  },
+  receiveNewComment: function(newComment) {
+    AppDispatcher.dispatch({
+      actionType: CommentsConstants.NEW_COMMENT_RECEIVED,
+      newComment: newComment
     });
   }
 };

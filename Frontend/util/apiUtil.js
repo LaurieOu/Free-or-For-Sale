@@ -34,6 +34,11 @@ var apiUtil = {
       ApiActions.receiveNewListing(listing);
       });
     },
+  createComment: function(newComment) {
+    $.post('api/comments', {comment: newComment}, function(comment) {
+      ApiActions.receiveNewComment(comment);
+    });
+  }
 };
 
 // createNewListing: function(listing, callback){

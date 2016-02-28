@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users
     resources :listings
     resources :categories, only: [:index]
+    resources :comments, only: [:create]
   end
 
   resources :users, only: [:new, :show, :create]

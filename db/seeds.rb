@@ -106,3 +106,10 @@ Listing.create!([
   {title: "taylor swift", description: "YES", price: 10, university_id: 1, category_id: 9, user_id: 9, archived: true},
   {title: "self portrait", description: "of laurie", price: 1000000, university_id: 1, category_id: 10, user_id: 1, archived: true}
   ])
+
+Comment.create!([
+  {body: "I love this play" , user_id: 1, listing_id: 1},
+  {body: "at last I see the light!" , user_id: 1, listing_id: 2},
+  {body: "I paid too much for rent :(" , user_id: 1, listing_id: 3},
+  {body: "such beautiful imagery" , user_id: 1, listing_id: 4}
+  ])

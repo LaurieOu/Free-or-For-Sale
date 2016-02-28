@@ -29,7 +29,7 @@ var Categories = React.createClass({
     if (this.state.renderNewListing){
      var newListingForm =  <NewListing category_id={this.state.category_id}/>;
    }else{
-     var newListingForm = "";
+     var newListingForm = <NewListing />;
    }
 
     return(
