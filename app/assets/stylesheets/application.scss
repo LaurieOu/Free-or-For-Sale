@@ -17,7 +17,6 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-
 .auth-body {
   /*position: relative;
   display: block;
@@ -73,6 +72,44 @@
   color: white;
 }
 
-.category:hover {
-  background-color: yellow;
+.category-box {
+  width: 200px;
+  margin-left: 50px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 3px;
+  float:left;
+}
+
+// .university-page-container {
+//   background: url("http://predictiontechnology.ucla.edu/wp-content/uploads/2016/01/7451946966_e46d204e28_b-1024x680.jpg") center center;
+//   background-attachment: fixed;
+//   overflow: hidden;
+//   height: 100vh;
+// }
+
+.form-listing-container {
+  // overflow: hidden;
+  text-align: center;
+  margin-left: 25%;
+  width: 68%;
+  height: 100vh;
+  background: rgba(0,0, 0, 0.7);
+}
+
+
+
+.form-listing-item-description {
+  width: 300px;
+  height: 75px;
+}
+
+.form-listing-item {
+  width: 300px;
+  height: 25px;
+}
+
+.listing-container {
+  display: inline;
+  clear: left;
+
 }

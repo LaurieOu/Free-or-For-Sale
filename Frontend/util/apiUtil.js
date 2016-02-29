@@ -38,6 +38,20 @@ var apiUtil = {
     $.post('api/comments', {comment: newComment}, function(listings) {
       ApiActions.receiveAllListings(listings);
     });
+  },
+  createLike: function(newLike) {
+    $.post('api/likes', {like: newLike}, function(listings) {
+      ApiActions.receiveAllListings(listings);
+    });
+  },
+  deleteLike: function(newLike) {
+    $.ajax({
+      url: 'api/likes/' + newLike.listing_id,
+      type: 'DELETE',
+      success: function (listings) {
+        ApiActions.receiveAllListings(listings);
+      }
+    });
   }
 };
 

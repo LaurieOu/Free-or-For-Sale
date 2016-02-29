@@ -5,7 +5,7 @@ class Api::ListingsController < ApplicationController
     if (params[:categories])
       @listings = Listing.where(category_id: params[:categories], university_id: current_user.university_id)
     else
-      @listings = Listing.where(university_id: current_user.university_id).includes(:university, :user, :category, :comments)
+      @listings = Listing.where(university_id: current_user.university_id).includes(:university, :user, :category, :comments, :likers)
     end
   end
 
@@ -21,13 +21,7 @@ class Api::ListingsController < ApplicationController
 
   end
 
-  # def create
-  #   listing = current_user.listings.create!(listing_params)
-  #
-  #   if listing.save
-  #     render json: listing
-  #   end
-  # end
+
   #
   # def update
   #   listing = Listing.find(params[:id])

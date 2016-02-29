@@ -13,6 +13,13 @@
 class Comment < ActiveRecord::Base
    belongs_to :user
    belongs_to :listing
+   has_many :likes
+
+   has_many(
+     :likers,
+     through: :likes,
+     source: :user
+   )
 
 
   def date_and_time

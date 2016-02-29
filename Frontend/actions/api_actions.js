@@ -23,12 +23,6 @@ ApiActions = {
       categories: categories
     });
   },
-  // receiveNewComment: function(newComment) {
-  //   AppDispatcher.dispatch({
-  //     actionType: CommentsConstants.NEW_COMMENT_RECEIVED,
-  //     newComment: newComment
-  //   });
-  // }
 };
 
 module.exports = ApiActions;

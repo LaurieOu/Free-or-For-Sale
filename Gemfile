@@ -29,6 +29,7 @@ gem 'bcrypt'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

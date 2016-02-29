@@ -6,6 +6,7 @@ var NewComment = React.createClass({
     if (e.keyCode === 13) {
       e.preventDefault();
       apiUtil.createComment({body: e.target.value, listing_id: this.props.listing_id})
+      this.props.onNewComment();
     }
   },
   render: function() {

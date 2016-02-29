@@ -48,6 +48,14 @@ var mostRecentItemsForm = React.createClass(
       e.preventDefault();
       apiUtil.createListing(this.state);
     },
+    uploadImage: function (event) {
+      event.preventDefault();
+      cloudinary.openUploadWidget({cloud_name: 'ddefvho7g', upload_preset: 'edydlnhr'}, function(error, result){
+        if (!error) {
+          this.props.storeListingImages(result);
+        }
+      }.bind(this));
+    },
     render: function() {
       var extraContent = "";
 
@@ -58,15 +66,18 @@ var mostRecentItemsForm = React.createClass(
       if(this.state.expanded) {
         extraContent = (
           <div>
-            <input type="text" value={this.state.price} placeholder="Add a price" name="listing[price]" onChange={this.handlePriceChange}/><br/>
-            <input type="text" value={this.state.address} placeholder="Address" name="listing[address]" onChange={this.handleAdressChange}/><br/>
-            <input type="text" value={this.state.description} placeholder="Describe your item (optional)" name="listing[description]" onChange={this.handleDescriptionChange}/><br/>
-
+            <input type="text" value={this.state.price} placeholder="Add a price" name="listing[price]" onChange={this.handlePriceChange} className="form-listing-item"/><br/>
+            <input type="text" value={this.state.address} placeholder="Address" name="listing[address]" onChange={this.handleAdressChange} className="form-listing-item"/><br/>
+            <textarea className="form-listing-item-description" type="text" placeholder="Describe your item (optional)" value={this.state.description} onChange={this.handleDescriptionChange} ></textarea>
+            <br/>
             <select
               value = {this.state.category_id}
               onChange={this.handleCategoryChange}>
               {options}
             </select><br/>
+
+            <button className="btn btn-default"onClick={this.uploadImage}>Add Image</button>
+            <br/>
 
             <input type="submit" value="Submit"/>
 
@@ -76,12 +87,13 @@ var mostRecentItemsForm = React.createClass(
       };
 
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="form-listing-container">
           <input onClick={this.toggle}
            type="text"
            placeholder="What are you selling?"
            value={this.state.title}
            name="listing[title]"
+           className="form-listing-item"
            onChange={this.handleTitleChange}/><br/>
 
           {extraContent}

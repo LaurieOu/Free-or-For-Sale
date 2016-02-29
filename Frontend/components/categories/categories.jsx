@@ -23,22 +23,21 @@ var Categories = React.createClass({
     apiUtil.fetchSingleListings(e.currentTarget.id);
     this.setState({category_id: e.currentTarget.id, renderNewListing: true});
 
-
   },
   render: function() {
     if (this.state.renderNewListing){
      var newListingForm =  <NewListing category_id={this.state.category_id}/>;
-   }else{
-     var newListingForm = <NewListing />;
-   }
+    }else{
+     var newListingForm = <NewListing/>;
+    }
 
     return(
       <article>
 
-        <ul>
+        <ul className="nav nav-pills nav-stacked span2 category-box">
           {this.state.categories.map(function(category) {
             return (
-                <li key={category.id} id={category.id} onClick={this.handleClick} className="category">{category.category_name}</li>
+                <li key={category.id} id={category.id} onClick={this.handleClick} className="category"><a href="#">{category.category_name}</a></li>
             );
           }, this)}
         </ul>

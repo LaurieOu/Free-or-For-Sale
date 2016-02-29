@@ -20,7 +20,14 @@ class Listing < ActiveRecord::Base
   belongs_to :user
   belongs_to :university
   belongs_to :category
-  has_many :comments 
+  has_many :comments
+  has_many :likes
+
+  has_many(
+    :likers,
+    through: :likes,
+    source: :user
+  )
 
 
 end
