@@ -27,6 +27,10 @@ LikesStore.__onDispatch = function(payload) {
       addNewLike(payload.newLike);
       LikesStore.__emitChange();
       break;
+    case LikeConstants.REMOVE_LIKE:
+      resetLikes(payload.likes);
+      LikesStore.__emitChange();
+      break;
   }
 };
 

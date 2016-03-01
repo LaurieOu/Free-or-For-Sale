@@ -5,7 +5,7 @@ var CommentsConstants = require('../constants/comments_constants');
 var LikeConstants = require('../constants/likes_constants');
 
 
-ApiActions = {
+var ApiActions = {
   receiveAllListings: function(listings) {
     AppDispatcher.dispatch({
       actionType: ListingsConstants.LISTINGS_RECEIVED,
@@ -35,7 +35,13 @@ ApiActions = {
       actionType: LikeConstants.NEW_LIKE_RECEIVED,
       newLike: newLike
     })
-  }
+  },
+  removeLike: function(likes){
+  AppDispatcher.dispatch({
+    actionType: LikeConstants.REMOVE_LIKE,
+    likes: likes
+  });
+}
 };
 
 module.exports = ApiActions;

@@ -1,5 +1,5 @@
 var React = require('react');
-var LikeStore = require('../../stores/likes');
+var LikeStore = require('../../stores/like');
 var apiUtil = require('../../util/apiUtil');
 
 var Likes = React.createClass({
@@ -12,24 +12,35 @@ var Likes = React.createClass({
   handleLikeClick: function(e) {
     e.preventDefault();
     if (this.state.liked === false ) {
-      apiUtil.createLike({listing_id: e.target.id});
+      apiUtil.createLike({listing_id: this.props.listing_id});
       this.setState({liked: true});
     } else {
-      apiUtil.deleteLike({listing_id: e.target.id});
+      apiUtil.deleteLike({listing_id: this.props.listing_id});
       this.setState({liked: false});
     }
   },
-  displayLikers: function(listing) {
-      return (
-       listing.likersListing.map(function(liker, i) {
-         return(<li key={i}>{liker.username}</li>)
-       })
-     )
+  componentDidMount: function() {
+    this.likeListener = LikeStore.addListener(this._onChange);
   },
+  componentWillUnmount: function() {
+    this.likeListener.remove();
+  },
+  // displayLikers: function(listing) {
+  //     return (
+  //      listing.likersListing.map(function(liker, i) {
+  //        return(<li key={i}>{liker.username}</li>)
+  //      })
+  //    )
+  // },
+  // {this.displayLikers(this.props.listing)}
   render: function() {
     return(
-      <a href="#" className="btn btn-default" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" onClick={that.handleLikeClick} id={listing.id} ></span></a>
-      {that.displayLikers(listing)}
+      <div>
+        <a href="#" className="btn btn-default" onClick={this.handleLikeClick}><span className="glyphicon glyphicon-thumbs-up" onClick={this.handleLikeClick} ></span></a>
+
+      </div>
     )
   }
-})
+});
+
+module.exports = Likes;

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :listings
     resources :categories, only: [:index, :show]
     resources :comments, only: [:create]
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:index, :create, :destroy]
   end
 
   resources :users, only: [:new, :show, :create]

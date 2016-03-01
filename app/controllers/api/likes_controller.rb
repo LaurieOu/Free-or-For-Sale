@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
   def index
     @likes = Like.all
-  end 
+  end
 
   def create
     input_hash = {user_id: current_user.id}
@@ -9,9 +9,9 @@ class Api::LikesController < ApplicationController
     inputParams["listing_id"] = inputParams["listing_id"].to_i
 
     @like = Like.new(inputParams)
+    debugger;
     if @like.save
-      @listings = Listing.all
-      render "api/listings/index"
+      render "api/likes/index"
     else
       render json: {}, status: 420
     end
@@ -25,7 +25,7 @@ class Api::LikesController < ApplicationController
     @like.destroy
     @likes = Like.all
     @listings = Listing.all
-    render "api/listings/index"
+    render "api/likes/index"
   end
 
   private

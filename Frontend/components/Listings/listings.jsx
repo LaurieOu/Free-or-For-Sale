@@ -55,14 +55,11 @@ var Listings = React.createClass({
                         <li>Title: {listing.title}</li>
                         <li>Description: {listing.description}</li>
 
-                        <Like /> 
-                        <a href="#" className="btn btn-default" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" onClick={that.handleLikeClick} id={listing.id} ></span></a>
-                        {that.displayLikers(listing)}
-
+                        <Likes listing_id={listing.id} listing={listing}/>
 
 
                         {that.displayComments(listing)}
-                        <NewComment onNewComment={that.onNewComment} listing_id={listing.id}/>
+                        <NewComment onNewComment={that.onNewComment} listing_id={listing.id} />
                       </ul>
                     </li>
               )})}

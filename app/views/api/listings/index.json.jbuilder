@@ -15,9 +15,9 @@ json.array! @listings do |listing|
     json.user comment.user.username
   end
 
-  json.likersListing(listing.likers) do |liker|
-    json.user_id liker.id
-    json.username liker.username
-  end
+  # json.likersListing(listing.likers) do |liker|
+  #   json.user_id liker.id
+  #   json.username liker.username
+  # end
 
 end
