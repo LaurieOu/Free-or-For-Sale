@@ -46,23 +46,24 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-	var Listings = __webpack_require__(159);
+	var FormAndListings = __webpack_require__(249);
 	var ReactRouter = __webpack_require__(189);
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
 	var IndexRoute = ReactRouter.IndexRoute;
-	var hashHistory = ReactRouter.HashHistory;
+	var browserHistory = __webpack_require__(189).browserHistory;
+	var App = __webpack_require__(248);
 	
 	var routes = React.createElement(
 	  Route,
-	  { path: '/' },
-	  React.createElement(IndexRoute, { component: Listings })
+	  { path: '/', component: App },
+	  React.createElement(Route, { path: ':category', component: FormAndListings })
 	);
 	
 	document.addEventListener("DOMContentLoaded", function () {
 	  ReactDOM.render(React.createElement(
 	    Router,
-	    { history: hashHistory },
+	    { history: browserHistory },
 	    routes
 	  ), document.getElementById('root'));
 	});
@@ -19675,11 +19676,10 @@
 	var React = __webpack_require__(1);
 	var ListingsStore = __webpack_require__(160);
 	var apiUtil = __webpack_require__(181);
-	var Categories = __webpack_require__(185);
-	var LoginBar = __webpack_require__(188);
 	var NewComment = __webpack_require__(246);
 	var InfiniteScroll = __webpack_require__(247)(React);
 	var InfiniteScroll = React.addons.InfiniteScroll;
+	var browserHistory = __webpack_require__(189).browserHistory;
 	
 	var Listings = React.createClass({
 	  displayName: 'Listings',
@@ -19701,10 +19701,16 @@
 	    this.setState({ listings: ListingsStore.all() });
 	  },
 	  componentDidMount: function () {
+	    var category = window.location.pathname.slice(1);
 	    this.listingsListener = ListingsStore.addListener(this._onChange);
-	    apiUtil.fetchAllListings();
+	    apiUtil.fetchListingsFromCategory({ category });
 	  },
-	  compomentWillUnmount: function () {
+	  componentWillReceiveProps: function (newProps) {
+	    var category = window.location.pathname.slice(1);
+	    this.listingsListener = ListingsStore.addListener(this._onChange);
+	    apiUtil.fetchListingsFromCategory({ category });
+	  },
+	  componentWillUnmount: function () {
 	    this.listingsListener.remove();
 	  },
 	  displayComments: function (listing) {
@@ -19748,43 +19754,42 @@
 	  },
 	  render: function () {
 	    var that = this;
-	
+	    var browserHistory = __webpack_require__(189).browserHistory;
 	    return React.createElement(
 	      'div',
 	      { className: 'university-page-container' },
-	      React.createElement(LoginBar, null),
-	      React.createElement(Categories, null),
 	      React.createElement(
 	        'ul',
 	        { className: 'listing-container' },
-	        this.state.listings.map(function (listing) {
+	        this.state.listings.map(function (listing, i) {
 	          //make this ListingIndexItem
 	          return React.createElement(
-	            'div',
-	            null,
+	            'li',
+	            { key: i },
 	            React.createElement(
-	              'li',
+	              'ul',
 	              null,
-	              'Title: ',
-	              listing.title
-	            ),
-	            React.createElement(
-	              'li',
-	              null,
-	              'Description: ',
-	              listing.description
-	            ),
-	            React.createElement(
-	              'a',
-	              { href: '#', className: 'btn btn-default', onClick: that.handleLikeClick, id: listing.id },
-	              React.createElement('span', { className: 'glyphicon glyphicon-thumbs-up', onClick: that.handleLikeClick, id: listing.id })
-	            ),
-	            that.displayLikers(listing),
-	            that.displayComments(listing),
-	            React.createElement('br', null),
-	            React.createElement(NewComment, { onNewComment: that.onNewComment, listing_id: listing.id }),
-	            React.createElement('br', null),
-	            React.createElement('br', null)
+	              React.createElement(
+	                'li',
+	                null,
+	                'Title: ',
+	                listing.title
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                'Description: ',
+	                listing.description
+	              ),
+	              React.createElement(
+	                'a',
+	                { href: '#', className: 'btn btn-default', onClick: that.handleLikeClick, id: listing.id },
+	                React.createElement('span', { className: 'glyphicon glyphicon-thumbs-up', onClick: that.handleLikeClick, id: listing.id })
+	              ),
+	              that.displayLikers(listing),
+	              that.displayComments(listing),
+	              React.createElement(NewComment, { onNewComment: that.onNewComment, listing_id: listing.id })
+	            )
 	          );
 	        })
 	      )
@@ -26524,10 +26529,10 @@
 	      }
 	    });
 	  },
-	  fetchSingleListings: function (id) {
+	  fetchListingsFromCategory: function (category) {
 	    $.ajax({
 	      url: 'api/listings',
-	      data: { "categories": id },
+	      data: { "category_name": category.category },
 	      type: 'GET',
 	      success: function (listings) {
 	        ApiActions.receiveAllListings(listings);
@@ -26631,6 +26636,8 @@
 	var CategoriesStore = __webpack_require__(186);
 	var apiUtil = __webpack_require__(181);
 	var NewListing = __webpack_require__(187);
+	var CategoryIndexItem = __webpack_require__(250);
+	var browserHistory = __webpack_require__(189).browserHistory;
 	
 	var Categories = React.createClass({
 	  displayName: 'Categories',
@@ -26648,37 +26655,17 @@
 	  compomentWillUnmount: function () {
 	    this.categoriesListener.remove();
 	  },
-	  handleClick: function (e) {
-	
-	    apiUtil.fetchSingleListings(e.currentTarget.id);
-	    this.setState({ category_id: e.currentTarget.id, renderNewListing: true });
-	  },
 	  render: function () {
-	    if (this.state.renderNewListing) {
-	      var newListingForm = React.createElement(NewListing, { category_id: this.state.category_id });
-	    } else {
-	      var newListingForm = React.createElement(NewListing, null);
-	    }
-	
 	    return React.createElement(
 	      'article',
 	      null,
 	      React.createElement(
 	        'ul',
 	        { className: 'nav nav-pills nav-stacked span2 category-box' },
-	        this.state.categories.map(function (category) {
-	          return React.createElement(
-	            'li',
-	            { key: category.id, id: category.id, onClick: this.handleClick, className: 'category' },
-	            React.createElement(
-	              'a',
-	              { href: '#' },
-	              category.category_name
-	            )
-	          );
+	        this.state.categories.map(function (category, i) {
+	          return React.createElement(CategoryIndexItem, { key: i, category: category, history: this.history });
 	        }, this)
-	      ),
-	      newListingForm
+	      )
 	    );
 	  }
 	});
@@ -26848,7 +26835,7 @@
 	  },
 	  handleHomeClick: function () {
 	    apiUtil.fetchAllListings();
-	    browserHistory.push("/");
+	    browserHistory.push("/Home");
 	  },
 	  render: function () {
 	    var login;
@@ -32025,6 +32012,89 @@
 	  };
 	  return InfiniteScroll;
 	};
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var LoginBar = __webpack_require__(188);
+	var Categories = __webpack_require__(185);
+	var NewListingForm = __webpack_require__(187);
+	var browserHistory = __webpack_require__(189).browserHistory;
+	
+	var App = React.createClass({
+	  displayName: 'App',
+	
+	  render: function () {
+	
+	    var that = this;
+	
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(LoginBar, null),
+	      React.createElement(Categories, null),
+	      React.createElement(
+	        'div',
+	        null,
+	        this.props.children
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = App;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var NewListingForm = __webpack_require__(187);
+	var Listing = __webpack_require__(159);
+	var React = __webpack_require__(1);
+	
+	var FormAndListing = React.createClass({
+	  displayName: 'FormAndListing',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(NewListingForm, null),
+	      React.createElement(Listing, null)
+	    );
+	  }
+	});
+	
+	module.exports = FormAndListing;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var apiUtil = __webpack_require__(181);
+	var browserHistory = __webpack_require__(189).browserHistory;
+	
+	var CategoryIndexItem = React.createClass({
+	  displayName: 'CategoryIndexItem',
+	
+	  handleClick: function (e) {
+	    e.preventDefault();
+	    apiUtil.fetchListingsFromCategory(this.props.category.category_name);
+	    browserHistory.push(this.props.category.category_name);
+	  },
+	  render: function () {
+	    return React.createElement(
+	      'li',
+	      { onClick: this.handleClick, className: 'categoryIndexItem' },
+	      this.props.category.category_name
+	    );
+	  }
+	});
+	
+	module.exports = CategoryIndexItem;
 
 /***/ }
 /******/ ]);

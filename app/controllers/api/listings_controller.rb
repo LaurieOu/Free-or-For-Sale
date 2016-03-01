@@ -1,8 +1,14 @@
 class Api::ListingsController < ApplicationController
 
   def index
-
-    if (params[:categories])
+    if(params[:category_name])
+      if(params[:category_name] == "Home")
+        @listings = Listing.all 
+      else
+        category_id = Category.find_by(category_name: params[:category_name]).id
+        @listings = Listing.where(category_id: category_id, university_id: current_user.university_id)
+      end
+    elsif (params[:categories])
       @listings = Listing.where(category_id: params[:categories], university_id: current_user.university_id)
     else
       @listings = Listing.where(university_id: current_user.university_id).includes(:university, :user, :category, :comments, :likers)

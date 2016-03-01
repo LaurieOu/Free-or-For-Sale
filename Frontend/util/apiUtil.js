@@ -10,10 +10,10 @@ var apiUtil = {
       }
     });
   },
-  fetchSingleListings: function(id) {
+  fetchListingsFromCategory: function(category) {
     $.ajax({
       url: 'api/listings',
-      data: {"categories": id},
+      data: {"category_name": category.category},
       type: 'GET',
       success: function (listings) {
         ApiActions.receiveAllListings(listings);

@@ -1,17 +1,18 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Listings = require('./components/Listings/listings');
+var FormAndListings = require('./components/Listings/formAndListings');
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
-var hashHistory = ReactRouter.HashHistory;
+var browserHistory = require('react-router').browserHistory;
+var App = require('./components/app');
 
 
 
 var routes = (
-  <Route path="/" >
-    <IndexRoute component={Listings}/>
+  <Route path="/" component={App} >
+    <Route path=":category" component={FormAndListings} />
   </Route>
 );
 
@@ -19,7 +20,7 @@ var routes = (
 
 document.addEventListener("DOMContentLoaded", function () {
   ReactDOM.render(
-    <Router history={hashHistory}>{routes}</Router>,
+    <Router history={browserHistory}>{routes}</Router>,
     document.getElementById('root')
   );
 });

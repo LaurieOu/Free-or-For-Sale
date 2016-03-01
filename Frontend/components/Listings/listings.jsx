@@ -1,11 +1,11 @@
 var React = require('react');
 var ListingsStore = require('../../stores/listings');
 var apiUtil = require('../../util/apiUtil');
-var Categories = require('../categories/categories');
-var LoginBar = require('../navigation/login');
 var NewComment = require('../comments/newComment');
 var InfiniteScroll = require('react-infinite-scroll')(React);
 var InfiniteScroll = React.addons.InfiniteScroll;
+var browserHistory = require('react-router').browserHistory;
+
 
 
 var Listings = React.createClass({
@@ -27,10 +27,16 @@ var Listings = React.createClass({
     this.setState({listings: ListingsStore.all()});
   },
   componentDidMount: function() {
+    var category = window.location.pathname.slice(1);
     this.listingsListener = ListingsStore.addListener(this._onChange);
-    apiUtil.fetchAllListings();
+    apiUtil.fetchListingsFromCategory({category});
   },
-  compomentWillUnmount: function() {
+  componentWillReceiveProps: function(newProps) {
+    var category = window.location.pathname.slice(1);
+    this.listingsListener = ListingsStore.addListener(this._onChange);
+    apiUtil.fetchListingsFromCategory({category});
+  },
+  componentWillUnmount: function() {
     this.listingsListener.remove();
   },
   displayComments: function (listing) {
@@ -66,26 +72,23 @@ var Listings = React.createClass({
   },
   render: function() {
     var that = this;
-
+    var browserHistory = require('react-router').browserHistory;
     return(
       <div className="university-page-container">
-
-        <LoginBar/>
-        <Categories />
           <ul className="listing-container">
-            {this.state.listings.map(function(listing) {
+            {this.state.listings.map(function(listing, i) {
               //make this ListingIndexItem
               return (
-                    <div>
-                      <li>Title: {listing.title}</li>
-                      <li>Description: {listing.description}</li>
-                      <a href="#" className="btn btn-default" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" onClick={that.handleLikeClick} id={listing.id} ></span></a>
-                      {that.displayLikers(listing)}
-                      {that.displayComments(listing)}
-                      <br/>
-                      <NewComment onNewComment={that.onNewComment} listing_id={listing.id}/>
-                      <br/><br/>
-                    </div>
+                    <li key={i}>
+                      <ul>
+                        <li>Title: {listing.title}</li>
+                        <li>Description: {listing.description}</li>
+                        <a href="#" className="btn btn-default" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" onClick={that.handleLikeClick} id={listing.id} ></span></a>
+                        {that.displayLikers(listing)}
+                        {that.displayComments(listing)}
+                        <NewComment onNewComment={that.onNewComment} listing_id={listing.id}/>
+                      </ul>
+                    </li>
               )})}
           </ul>
       </div>

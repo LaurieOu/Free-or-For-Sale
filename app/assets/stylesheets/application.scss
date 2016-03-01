@@ -80,6 +80,10 @@
   float:left;
 }
 
+.categoryIndexItem {
+  color: white; 
+}
+
 // .university-page-container {
 //   background: url("http://predictiontechnology.ucla.edu/wp-content/uploads/2016/01/7451946966_e46d204e28_b-1024x680.jpg") center center;
 //   background-attachment: fixed;
@@ -88,11 +92,10 @@
 // }
 
 .form-listing-container {
-  // overflow: hidden;
+  overflow: hidden;
   text-align: center;
   margin-left: 25%;
-  width: 68%;
-  height: 100vh;
+  width: 300px;
   background: rgba(0,0, 0, 0.7);
 }
 
@@ -104,12 +107,13 @@
 }
 
 .form-listing-item {
-  width: 300px;
+  width: 100%;
   height: 25px;
 }
 
 .listing-container {
   display: inline;
   clear: left;
+
 
 }

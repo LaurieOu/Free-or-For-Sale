@@ -17,7 +17,7 @@ var Login = React.createClass({
   },
   handleHomeClick: function() {
     apiUtil.fetchAllListings();
-    browserHistory.push("/");
+    browserHistory.push("/Home");
   },
   render: function() {
     var login;

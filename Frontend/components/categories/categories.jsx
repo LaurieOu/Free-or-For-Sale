@@ -2,6 +2,9 @@ var React = require('react');
 var CategoriesStore = require('../../stores/categories');
 var apiUtil = require('../../util/apiUtil');
 var NewListing = require('../Listings/newListing');
+var CategoryIndexItem = require('./categoryIndexItem');
+var browserHistory = require('react-router').browserHistory;
+
 
 
 var Categories = React.createClass({
@@ -18,30 +21,17 @@ var Categories = React.createClass({
   compomentWillUnmount: function() {
     this.categoriesListener.remove();
   },
-  handleClick: function(e) {
-
-    apiUtil.fetchSingleListings(e.currentTarget.id);
-    this.setState({category_id: e.currentTarget.id, renderNewListing: true});
-
-  },
   render: function() {
-    if (this.state.renderNewListing){
-     var newListingForm =  <NewListing category_id={this.state.category_id}/>;
-    }else{
-     var newListingForm = <NewListing/>;
-    }
-
     return(
       <article>
 
         <ul className="nav nav-pills nav-stacked span2 category-box">
-          {this.state.categories.map(function(category) {
+          {this.state.categories.map(function(category, i) {
             return (
-                <li key={category.id} id={category.id} onClick={this.handleClick} className="category"><a href="#">{category.category_name}</a></li>
+                <CategoryIndexItem key={i} category={category} history={this.history}/>
             );
           }, this)}
         </ul>
-        {newListingForm}
       </article>
     );
   }
