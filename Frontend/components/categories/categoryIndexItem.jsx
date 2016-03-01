@@ -13,7 +13,7 @@ var CategoryIndexItem = React.createClass({
   },
   render: function() {
     return(
-    <li onClick={this.handleClick} className="categoryIndexItem"><a href="#">{this.props.category.category_name}</a></li>)
+    <li onClick={this.handleClick} className="categoryIndexItem"><a href="#" className="pill-text">{this.props.category.category_name}</a></li>)
   }
 });
 

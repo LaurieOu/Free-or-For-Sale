@@ -24,9 +24,9 @@ var Login = React.createClass({
     if (window.user.username) {
       login = (
         <ul className="nav nav-pills">
-          <li role="presentation" className="active" onClick={this.handleHomeClick}><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">Profile</a></li>
-          <li role="presentation"  onClick={this.handleSignOutClick}><a href="#">Log Out</a></li>
+          <li role="presentation" className="active" onClick={this.handleHomeClick}><a href="#" className="pill-text" >Home</a></li>
+          <li role="presentation"  ><a href="#" className="pill-text">Profile</a></li>
+          <li role="presentation"  onClick={this.handleSignOutClick}><a href="#" className="pill-text">Log Out</a></li>
         </ul>
       );
     }

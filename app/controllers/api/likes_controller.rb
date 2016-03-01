@@ -1,4 +1,8 @@
 class Api::LikesController < ApplicationController
+  def index
+    @likes = Like.all
+  end 
+
   def create
     input_hash = {user_id: current_user.id}
     inputParams = like_params.merge(input_hash)
