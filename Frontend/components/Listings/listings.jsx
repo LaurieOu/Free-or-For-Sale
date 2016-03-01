@@ -74,12 +74,11 @@ var Listings = React.createClass({
     var that = this;
     var browserHistory = require('react-router').browserHistory;
     return(
-      <div className="university-page-container">
-          <ul className="listing-container">
+      <div>
+          <ul className="container-for-listing-container">
             {this.state.listings.map(function(listing, i) {
-              //make this ListingIndexItem
               return (
-                    <li key={i}>
+                    <li key={i} className="listing-container">
                       <ul>
                         <li>Title: {listing.title}</li>
                         <li>Description: {listing.description}</li>

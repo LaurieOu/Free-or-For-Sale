@@ -11,7 +11,7 @@ var App = React.createClass({
     var that = this;
 
     return(
-      <div>
+      <div className="university-page-container">
         <LoginBar />
         <Categories />
 

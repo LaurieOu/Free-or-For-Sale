@@ -5,7 +5,7 @@ var React = require('react');
 var FormAndListing = React.createClass({
   render: function () {
     return (
-      <div>
+      <div className="form-listing-container">
         <NewListingForm />
         <Listing  />
       </div>

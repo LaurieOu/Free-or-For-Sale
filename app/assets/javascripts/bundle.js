@@ -19757,15 +19757,14 @@
 	    var browserHistory = __webpack_require__(189).browserHistory;
 	    return React.createElement(
 	      'div',
-	      { className: 'university-page-container' },
+	      null,
 	      React.createElement(
 	        'ul',
-	        { className: 'listing-container' },
+	        { className: 'container-for-listing-container' },
 	        this.state.listings.map(function (listing, i) {
-	          //make this ListingIndexItem
 	          return React.createElement(
 	            'li',
-	            { key: i },
+	            { key: i, className: 'listing-container' },
 	            React.createElement(
 	              'ul',
 	              null,
@@ -26795,7 +26794,7 @@
 	
 	    return React.createElement(
 	      'form',
-	      { onSubmit: this.handleSubmit, className: 'form-listing-container' },
+	      { onSubmit: this.handleSubmit, className: 'form-container' },
 	      React.createElement('input', { onClick: this.toggle,
 	        type: 'text',
 	        placeholder: 'What are you selling?',
@@ -32032,7 +32031,7 @@
 	
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'university-page-container' },
 	      React.createElement(LoginBar, null),
 	      React.createElement(Categories, null),
 	      React.createElement(
@@ -32060,7 +32059,7 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'form-listing-container' },
 	      React.createElement(NewListingForm, null),
 	      React.createElement(Listing, null)
 	    );
@@ -32089,7 +32088,11 @@
 	    return React.createElement(
 	      'li',
 	      { onClick: this.handleClick, className: 'categoryIndexItem' },
-	      this.props.category.category_name
+	      React.createElement(
+	        'a',
+	        { href: '#' },
+	        this.props.category.category_name
+	      )
 	    );
 	  }
 	});

@@ -87,7 +87,7 @@ var mostRecentItemsForm = React.createClass(
       };
 
       return (
-        <form onSubmit={this.handleSubmit} className="form-listing-container">
+        <form onSubmit={this.handleSubmit} className="form-container">
           <input onClick={this.toggle}
            type="text"
            placeholder="What are you selling?"
