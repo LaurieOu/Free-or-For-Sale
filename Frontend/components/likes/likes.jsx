@@ -25,19 +25,18 @@ var Likes = React.createClass({
   componentWillUnmount: function() {
     this.likeListener.remove();
   },
-  // displayLikers: function(listing) {
-  //     return (
-  //      listing.likersListing.map(function(liker, i) {
-  //        return(<li key={i}>{liker.username}</li>)
-  //      })
-  //    )
-  // },
-  // {this.displayLikers(this.props.listing)}
+  displayLikers: function(listing) {
+    return (
+       listing.likersListing.map(function(liker) {
+         return(<li key={liker.username}>{liker.username}</li>)
+       })
+     );
+  },
   render: function() {
     return(
       <div>
         <a href="#" className="btn btn-default" onClick={this.handleLikeClick}><span className="glyphicon glyphicon-thumbs-up" onClick={this.handleLikeClick} ></span></a>
-
+        {this.displayLikers(this.props.listing)}
       </div>
     )
   }

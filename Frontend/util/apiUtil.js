@@ -40,18 +40,16 @@ var apiUtil = {
     });
   },
   createLike: function(newLike) {
-    debugger
-    //newLike = {listing_id: this.props.listing_id}
-    $.post('api/likes', {like: newLike}, function(newLike) {
-      ApiActions.receiveNewLike(newLike);
+    $.post('api/likes', {like: newLike}, function(listings) {
+      ApiActions.receiveAllListings(listings);
     });
   },
   deleteLike: function(newLike) {
     $.ajax({
       url: 'api/likes/' + newLike.listing_id,
       type: 'DELETE',
-      success: function (likes) {
-        ApiActions.removeLike(likes);
+      success: function (listings) {
+        ApiActions.receiveAllListings(listings);
       }
     });
   }

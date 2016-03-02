@@ -24,24 +24,6 @@ var ApiActions = {
       categories: categories
     });
   },
-  fetchAllLikesForListing: function(likes) {
-    AppDispatcher.dispatch({
-      actionType: LikeConstants.LIKES_RECEIVED,
-      likes: likes
-    })
-  },
-  receiveNewLike: function(newLike) {
-    AppDispatcher.dispatch({
-      actionType: LikeConstants.NEW_LIKE_RECEIVED,
-      newLike: newLike
-    })
-  },
-  removeLike: function(likes){
-  AppDispatcher.dispatch({
-    actionType: LikeConstants.REMOVE_LIKE,
-    likes: likes
-  });
-}
 };
 
 module.exports = ApiActions;

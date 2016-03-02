@@ -22,11 +22,9 @@ var FormAndListing = React.createClass({
       '</div>';
       $('body').append(over);
       $('html, body').css("cursor", "wait");
-      console.log("creating overlay");
     } else if(action=="off"){
       $("#overlay").remove();
       $('html, body').css("cursor", "auto");
-      console.log("removing overlay");
     }
   },
   getListings: function() {
