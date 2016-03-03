@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!([
-  {username: "corine_flatley", email: "cleve@murphy.biz", password_digest: "$2a$10$n3oFQEkZrOyo1tH4oBp5C.XlpyUJkYbffs49/rlFpSPEUL4MCFGCy", session_token: "580U_87jXeI6hi1hrlmJdQ", university_id: 3},
-  {username: "paula.farrell", email: "kaycee@reillyfeeney.org", password_digest: "$2a$10$hyW/Ojn7wfkLMhG9bjNc9OwC8N5qNttQUQeI5fIXzmAKxVqqIU8ei", session_token: "tf9EkDBcxtqUbzy4KNzsRA", university_id: 4},
-  {username: "roman_block", email: "chanelle.wisoky@lebsack.io", password_digest: "$2a$10$7dIJvJxsMBeDDWSX1Bj2zuJF5t3MgXbsiip2zzdD6yzufiV2HUSlu", session_token: "8C7ysyj0Kh9tiFlxDNYdgA", university_id: 4},
-  {username: "gordon.crooks", email: "casandra_volkman@ratkehilpert.info", password_digest: "$2a$10$iFeEi.xIueZm7Xcp5VMwAuqqCm7yHogpQp8MdLkivsfjWsDqLHZyS", session_token: "ptH2PZnamndyCiwgBCSz5A", university_id: 4},
-  {username: "pamela", email: "kenyon_sawayn@jacobi.net", password_digest: "$2a$10$JTjvYYk2xFPz0XWPo6xf1uQLa7yPJG82wJlCxJ2P1RBiG..iVdClm", session_token: "qb-0wV5nYOa5NESgfzMZeg", university_id: 1},
-  {username: "edwardo", email: "baylee@zboncak.com", password_digest: "$2a$10$HAFczAH4cfC/A5.dMgu2xOKAMLnDOevJ1i91RVwvJrEn7a4PAxNt.", session_token: "AMgxncqpgkjl2k3FfuN7Xg", university_id: 4},
-  {username: "jarret_anderson", email: "verda_weinat@hintz.com", password_digest: "$2a$10$bFSXzYKnmPgP1LGaLfR/Yeuvj3t8KNITdnX1NQ6b0Xucl079q5eqK", session_token: "weTiEg1kVSyZt7Ry_dyIbg", university_id: 5},
+  {username: "corine_flatley", email: "cleve@murphy.biz", password_digest: "$2a$10$n3oFQEkZrOyo1tH4oBp5C.XlpyUJkYbffs49/rlFpSPEUL4MCFGCy", session_token: "580U_87jXeI6hi1hrlmJdQ", university_id: 3, image: "http://www.dailytimesgazette.com/wp-content/uploads/2015/10/do-no-reuse-taylor-swift-the-beat-bb36-sarah-barlow-billboard-6501.jpg"},
+  {username: "paula.farrell", email: "kaycee@reillyfeeney.org", password_digest: "$2a$10$hyW/Ojn7wfkLMhG9bjNc9OwC8N5qNttQUQeI5fIXzmAKxVqqIU8ei", session_token: "tf9EkDBcxtqUbzy4KNzsRA", university_id: 4, image: "http://pixel.nymag.com/imgs/fashion/daily/2015/01/06/06-taylor-swift.w750.h560.2x.jpg"},
+  {username: "roman_block", email: "chanelle.wisoky@lebsack.io", password_digest: "$2a$10$7dIJvJxsMBeDDWSX1Bj2zuJF5t3MgXbsiip2zzdD6yzufiV2HUSlu", session_token: "8C7ysyj0Kh9tiFlxDNYdgA", university_id: 4, image: "http://i2.mirror.co.uk/incoming/article5125725.ece/ALTERNATES/s615b/Taylor-Swift.jpg"},
+  {username: "gordon.crooks", email: "casandra_volkman@ratkehilpert.info", password_digest: "$2a$10$iFeEi.xIueZm7Xcp5VMwAuqqCm7yHogpQp8MdLkivsfjWsDqLHZyS", session_token: "ptH2PZnamndyCiwgBCSz5A", university_id: 4, image: "http://media.salon.com/2015/01/taylor_swift4.jpg"},
+  {username: "pamela", email: "kenyon_sawayn@jacobi.net", password_digest: "$2a$10$JTjvYYk2xFPz0XWPo6xf1uQLa7yPJG82wJlCxJ2P1RBiG..iVdClm", session_token: "qb-0wV5nYOa5NESgfzMZeg", university_id: 1, image: "http://www.hdwallpaper.nu/wp-content/uploads/2015/02/taylor-swift-2015-hd-wallpaper-2.jpg"},
+  {username: "edwardo", email: "baylee@zboncak.com", password_digest: "$2a$10$HAFczAH4cfC/A5.dMgu2xOKAMLnDOevJ1i91RVwvJrEn7a4PAxNt.", session_token: "AMgxncqpgkjl2k3FfuN7Xg", university_id: 4, image: "https://s-media-cache-ak0.pinimg.com/236x/45/6e/0b/456e0b87821a16630e9fbf8776f67abf.jpg"},
+  {username: "jarret_anderson", email: "verda_weinat@hintz.com", password_digest: "$2a$10$bFSXzYKnmPgP1LGaLfR/Yeuvj3t8KNITdnX1NQ6b0Xucl079q5eqK", session_token: "weTiEg1kVSyZt7Ry_dyIbg", university_id: 5, image: "https://cbsradionews.files.wordpress.com/2016/02/taylor-swift-smiles-getty-946.jpg?w=640&h=360&crop=1"},
   {username: "sam.greenholt", email: "lilliana@damore.net", password_digest: "$2a$10$QfPGnMlskN4cW5.6p1GCFukaQ23hzPvtyTYf8b8UWAXdNdCgam2sy", session_token: "LoOnmSVQEbqQnifMvJvx9A", university_id: 2},
   {username: "jonathan.feest", email: "delphia_eichmann@adams.info", password_digest: "$2a$10$rZUJFbU3BMeiTBuF4OGo/.BQCyNYgcfZpXTgsYbYIeaNEpuLfXiee", session_token: "ysTtlMSAvuq53ohOCen7NA", university_id: 3},
   {username: "nathan", email: "viva_stiedemann@grant.biz", password_digest: "$2a$10$9x7URVYgomWUNhHE7dTrxep3Je7RhY3xa1guSWULOPG54tTcp6sry", session_token: "B7WaGpFDnKAut8PSARSZmw", university_id: 5},
@@ -121,4 +121,14 @@ Like.create!([
   {user_id: 3, listing_id: 3},
   {user_id: 4, listing_id: 4},
   {user_id: 5, listing_id: 3}
+  ])
+
+Image.create!([
+  {listing_id: 1, url: "http://www.ardmorelittletheater.com/productions/past-seasons---archives/by-season/images/of-mice-and-men/of%20mice%20and%20men%20logo.jpg"},
+  {listing_id: 1, url: "http://ecx.images-amazon.com/images/I/51wuHv30-ML._SY344_BO1,204,203,200_.jpg"},
+  {listing_id: 1, url: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Of_Mice_And_Men_Poster.jpg"},
+  {listing_id: 1, url: "http://www.trbimg.com/img-556de81c/turbine/la-et-jc-steinbeck-censorship-attempt-idaho-20-001/650/650x366"},
+  {listing_id: 2, url: "http://ak1.ostkcdn.com/images/products/7653697/7653697/Curino-Bronze-Table-Lamp-P15068468.jpeg"},
+  {listing_id: 3, url: "http://www.lifeafterdorms.com/images/bldg/437Gayley-f.jpg"}
+
   ])

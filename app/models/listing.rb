@@ -22,6 +22,7 @@ class Listing < ActiveRecord::Base
   belongs_to :category
   has_many :comments
   has_many :likes
+  has_many :images 
 
   has_many(
     :likers,

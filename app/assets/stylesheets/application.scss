@@ -16,6 +16,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "../../../node_modules/react-image-gallery/src/ImageGallery";
+
 
 .auth-body {
   /*position: relative;
@@ -97,9 +99,9 @@
   color: white;
 }
 
-//
+
 // .university-page-container {
-//   background: url("http://predictiontechnology.ucla.edu/wp-content/uploads/2016/01/7451946966_e46d204e28_b-1024x680.jpg") center center;
+//   background: url("http://eztechtraining.com/wp-content/uploads/2012/11/2012-10-20-21.12.02.jpg") center center;
 //   background-attachment: fixed;
 //   overflow: hidden;
 //   height: 100vh;
@@ -112,7 +114,7 @@
   margin-left: 25%;
   width: 68%;
   height: 100vh;
-  background: rgba(0,0, 0, 0.8);
+  // background: rgba(0,0, 0, 0.8);
 }
 
 .form-container {
@@ -120,7 +122,7 @@
   text-align: center;
   margin-top: 25px;
   width: 650px;
-  background: rgba(0,128,128, 0.5);
+  background: rgba(173,255,47, 0.7);
   padding: 10px 20px 10px 20px;
   border-style: solid;
   border-color: white;
@@ -147,13 +149,16 @@
   text-align: center;
   margin-top: 25px;
   width: 650px;
-  background: rgba(0,128,128, 0.5);
+  background: rgba(173,255,47, 0.7);
   padding: 10px 20px 10px 20px;
   border-style: solid;
   border-color: white;
   border-width: 0.3px;
 }
-
+//
+// .listing-item {
+//   margin: 50px 20px 50px 20px;
+// }
 
 #overlay {
   opacity:0.7;

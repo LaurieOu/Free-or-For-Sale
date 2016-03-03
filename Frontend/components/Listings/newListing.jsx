@@ -5,24 +5,28 @@ var apiUtil = require('../../util/apiUtil');
 // var History = require('react-router').History;
 
 var _categories =
-                ["--categories--", "Books",
+                ["--categories--",
+                "Books",
                 "Furniture",
                 "Housing",
                 "Clothes",
                 "Electronics",
                 "Free",
                 "Services",
-                "Jobs/Internships",
+                "WorkOpportunities",
                 "Music",
                 "Other"];
 
 var mostRecentItemsForm = React.createClass(
   {
     getInitialState: function(){
-      return {
-        expanded: false,
-        title: "", description: "",
-                   price: "", address: "", category_id: this.props.category_id
+      return {expanded: false,
+              title: "",
+              description: "",
+              price: "",
+              address: "",
+              category_id: this.props.category_id,
+              images: []
       };
     },
     toggle: function(event){
@@ -47,20 +51,36 @@ var mostRecentItemsForm = React.createClass(
     handleSubmit: function(e) {
       e.preventDefault();
       apiUtil.createListing(this.state);
+      this.setState({expanded: false,
+              title: "",
+              description: "",
+              price: "",
+              address: "",
+              category_id: this.props.category_id,
+              images: []
+      })
     },
     uploadImage: function (event) {
       event.preventDefault();
-      cloudinary.openUploadWidget({cloud_name: 'ddefvho7g', upload_preset: 'edydlnhr'}, function(error, result){
+      cloudinary.openUploadWidget({cloud_name: 'ddefvho7g', upload_preset: 'hz6xer2t'}, function(error, result){
         if (!error) {
-          this.props.storeListingImages(result);
+          var allImages = []
+
+
+          result.forEach(function(one_image) {
+            allImages.push({url: one_image.secure_url});
+          }.bind(this))
+
+          this.setState({images: allImages})
+          // this.forceUpdate();
         }
-      }.bind(this));
+      }.bind(this), false);
     },
     render: function() {
       var extraContent = "";
 
       var options = _categories.map(function(el, i){
-        return <option value={i}>{el}</option>;
+        return <option value={i} >{el}</option>;
       }.bind(this));
 
       if(this.state.expanded) {
@@ -70,6 +90,7 @@ var mostRecentItemsForm = React.createClass(
             <input type="text" value={this.state.address} placeholder="Address" name="listing[address]" onChange={this.handleAdressChange} className="form-listing-item"/><br/>
             <textarea className="form-listing-item-description" type="text" placeholder="Describe your item (optional)" value={this.state.description} onChange={this.handleDescriptionChange} ></textarea>
             <br/>
+
             <select
               value = {this.state.category_id}
               onChange={this.handleCategoryChange}>
@@ -77,6 +98,11 @@ var mostRecentItemsForm = React.createClass(
             </select><br/>
 
             <button className="btn btn-default"onClick={this.uploadImage}>Add Image</button>
+
+            { this.state.images.map(function(image) {
+              return <img src={image.url} />
+            })}
+
             <br/>
 
             <input type="submit" value="Submit"/>

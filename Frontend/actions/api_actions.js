@@ -2,7 +2,6 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var ListingsConstants = require('../constants/listings_constants');
 var CategoriesConstants = require('../constants/categories_constants');
 var CommentsConstants = require('../constants/comments_constants');
-var LikeConstants = require('../constants/likes_constants');
 
 
 var ApiActions = {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228061211) do
+ActiveRecord::Schema.define(version: 20160302090137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160228061211) do
 
   add_index "comments", ["listing_id"], name: "index_comments_on_listing_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "url",         null: false
+    t.integer  "listing_id",  null: false
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "images", ["listing_id"], name: "index_images_on_listing_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
     t.integer  "listing_id", null: false
@@ -76,6 +86,7 @@ ActiveRecord::Schema.define(version: 20160228061211) do
     t.string   "session_token",   null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

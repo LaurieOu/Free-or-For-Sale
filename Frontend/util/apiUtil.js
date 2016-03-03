@@ -13,7 +13,7 @@ var apiUtil = {
   fetchListingsFromCategory: function(category) {
     $.ajax({
       url: 'api/listings',
-      data: {"category_name": category.category},
+      data: {"category_name": category},
       type: 'GET',
       success: function (listings) {
         ApiActions.receiveAllListings(listings);
