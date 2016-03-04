@@ -52,7 +52,7 @@ var apiUtil = {
         ApiActions.receiveAllListings(listings);
       }
     });
-  }
+  },
 };
 
 module.exports = apiUtil;

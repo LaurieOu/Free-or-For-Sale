@@ -34,18 +34,23 @@ var mostRecentItemsForm = React.createClass(
       this.setState({expanded: true});
     },
     handleTitleChange: function(e) {
+      e.preventDefault();
       this.setState({title: e.target.value});
     },
     handleDescriptionChange: function(e) {
+      e.preventDefault();
       this.setState({description: e.target.value});
     },
     handlePriceChange: function(e) {
+      e.preventDefault();
       this.setState({price: e.target.value});
     },
     handleAdressChange: function(e) {
+      e.preventDefault();
       this.setState({address: e.target.value});
     },
     handleCategoryChange: function(e) {
+      e.preventDefault();
       this.setState({category_id: parseInt(e.target.value)});
     },
     handleSubmit: function(e) {

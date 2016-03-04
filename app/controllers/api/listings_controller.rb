@@ -26,25 +26,30 @@ class Api::ListingsController < ApplicationController
       listing_params[:images].values.each do |url_image|
         newImages.concat([url_image])
         urls << url_image["url"]
-      end
-    end 
 
-    listing_params_keys = listing_params.keys[0..-2]
-    listing_params_keys.each do |key|
-      new_listing_params[key] = listing_params[key]
+        listing_params_keys = listing_params.keys[0..-2]
+        listing_params_keys.each do |key|
+          new_listing_params[key] = listing_params[key]
+        end
+      end
+
+      inputParams = new_listing_params.merge(input_hash)
+      @listing = Listing.new(inputParams)
+    else
+      @listing = Listing.new(listing_params.merge(input_hash))
     end
+
 
     # new_listing_params["images"] = newImages
 
-    inputParams = new_listing_params.merge(input_hash)
-
-
-    @listing = Listing.new(inputParams)
 
     if @listing.save
-      urls.each do |url|
-        Image.create({listing_id: @listing.id, url: url})
+      if urls.length != 0
+        urls.each do |url|
+          Image.create({listing_id: @listing.id, url: url})
+        end
       end
+
       render json: @listing
     end
 

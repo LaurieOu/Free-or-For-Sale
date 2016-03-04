@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
   belongs_to :university
+  has_many :listings 
 
 
   def self.find_by_credentials(username, password)
