@@ -26,27 +26,26 @@
   margin-right: 0;
   width: 100%;
   height: 975px;
-  // background: url('http://res.cloudinary.com/ddefvho7g/image/upload/v1457073356/FOFS_Background_2_qyen2f.jpg')
-  // no-repeat center center;
+  background: url('https://reviravoltapositiva.files.wordpress.com/2016/02/cropped-colors.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #FFE700;
   text-align: center;
-  // background-color: #FFE700;
 }
 
 .fof-title {
   font-size: 63px;
+  font-family: Monaco, MonoSpace;
   color: #000000;
   position: relative;
   top: 35px;
 }
 
 .for-university-students {
-  font-size: 20px;
+  font-size: 23px;
   color: #000000;
+  font-family: Monaco, MonoSpace;
   position: relative;
   top: 15px;
 }
@@ -66,7 +65,7 @@
   margin: auto;
   width: 588px;
   height: 360px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 3px;
 }
 
@@ -209,6 +208,9 @@ h3 span {
   top: 262px;
 }
 
+ul {
+  padding: 0px;
+}
 
 .session-username {
   left: 180px;
@@ -270,7 +272,7 @@ h3 span {
   margin-right: 0;
   width: 100%;
   height: 975px;
-  background: url('http://jboogie.com/wp-content/uploads/2014/07/skin_background.jpg')
+  background: url('http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/10/Color-Lines.jpg')
   no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -285,7 +287,7 @@ h3 span {
   text-align: center;
   margin-left: 25%;
   width: 68%;
-  height: 100vh;
+  height: 905px;
   // background: rgba(0,0, 0, 0.8);
 }
 
@@ -294,20 +296,20 @@ h3 span {
   text-align: center;
   margin-top: 25px;
   width: 100%;
-  background: rgba(255,255,255, 0.2);
-  padding: 10px 20px 10px 20px;
+  background: rgba(0,0,0, 0.7);
+  padding: 40px 20px 40px 20px;
   border-style: solid;
   border-color: white;
   border-width: 0.3px;
 }
 
 .form-listing-item-description {
-  width: 600px;
+  width: 95%;
   height: 100px;
 }
 
 .form-listing-item {
-  width: 600px;
+  width: 95%;
   height: 50px;
 }
 
@@ -320,8 +322,10 @@ h3 span {
   text-align: center;
   margin-top: 25px;
   width: 100%;
-  height: 100%;
-  background: rgba(255,255,255, 0.2);
+  // height: 975px;
+  min-height: 100px;
+  overflow: hidden;
+  background: rgba(0,0,0, 0.7);
   padding: 10px 20px 10px 20px;
   border-style: solid;
   border-color: white;
@@ -331,11 +335,98 @@ h3 span {
 .image-gallery-slides {
   width: 605px;
   height: 400px;
+  margin: 20px auto 20px auto;
+}
+
+.select-category-dropdown {
+  margin: 15px 0px 0px 0px;
+  width: 170px;
+}
+
+.btn-default {
+  margin: 15px 0px 0px 0px;
+}
+
+ul {
+  list-style-type: none;
 }
 //
 // .listing-item {
 //   margin: 50px 20px 50px 20px;
 // }
+
+.img-circle {
+  height: 100px;
+  width: 140px;
+}
+
+.comment-form-input {
+  color: black;
+  width: 98%;
+}
+
+.image-gallery-thumbnails {
+  padding: 0px;
+  margin: 0px 15px 0px 15px;
+  background: rgba(0,0,0,0.5);
+}
+
+li {
+  color: white;
+  font-size: 15px;
+}
+
+.listing-font {
+  font-size: 15px;
+}
+
+.listing-info-box{
+  text-align: left;
+  margin-left: 15px;
+}
+
+.user_display{
+  color:white;
+}
+
+.like-button {
+  float: left;
+  margin-left: 15px;
+  margin-top: 0px
+}
+
+.likers {
+  display: inline;
+  margin: 5px;
+  float: left;
+}
+
+.liked-your-post {
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.comment-box {
+  overflow: scroll;
+  width: 98%;
+  height: 150px;
+  text-align: -webkit-left;
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  border: 5px red;
+}
+
+.comment-img-circle {
+  width: 32px;
+  height: 25px;
+  padding: 3px;
+}
+
+hr{
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
 
 #overlay {
   opacity:0.7;

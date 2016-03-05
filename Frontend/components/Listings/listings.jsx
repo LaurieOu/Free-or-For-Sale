@@ -27,7 +27,13 @@ var Listings = React.createClass({
       return (
       <ul>
         {listing.comments.map(function(comment) {
-          return (<li>{comment.user}: {comment.body}</li>);
+          if (comment.image === null) {
+            comment.image = "https://lh3.googleusercontent.com/proxy/huJW3Lth9HYrcsW515H_r8rPGZUWw9hF5J_cCiJ7Me5wjuqimdsHoEqyCYTfCO5eoLKtVZuyjLBRi3_z8QeJmw=w426-h240-n"
+          }
+          return (
+              <li><img src={comment.image} className="img-circle comment-img-circle" height="20" weight="20"/>{comment.user}: {comment.body}</li>
+            );
+
         })}
      </ul>
     );
@@ -36,7 +42,7 @@ var Listings = React.createClass({
     return (
       <ul>
        {listing.likersListing.map(function(liker) {
-         return(<li>{liker.username}</li>);
+         return(<li className="likers">{liker.username} </li>);
        })}
      </ul>);
   },
@@ -114,20 +120,30 @@ var Listings = React.createClass({
               return (
                     <li key={listing.id} className="listing-container">
                       <ul>
-                        <li key="pic"><img src={that.profileImage(listing)} height="200" weight="200"/></li>
-                        <li key="user">{listing.user}</li>
-                        <li key="title">Title: {listing.title}</li>
-                        <li key="desc">Description: {listing.description}</li>
+                        <li key="pic" className="user-display"><img src={that.profileImage(listing)} className="img-circle" height="200" weight="200"/> {listing.user}</li>
+                        <div className="listing-info-box">
+                          <li key="title" className="listing-font"><b>Title:</b> {listing.title}</li>
+                          <li key="category" className="listing-font"><b>Category:</b> {listing.category}</li>
+                          <li key="desc" className="listing-font"><b>Description:</b> {listing.description}</li>
+                          <li key="price" className="listing-font"><b>Price:</b> ${listing.price}</li>
+                          <li key="timestamp" className="listing-font"><b>Posted:</b> {listing.timestamp}</li>
+                        </div>
                       </ul>
 
                         {that.displayImages(listing)}
 
                         <br/>
-                        <a href="#" className="btn btn-default" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" onClick={that.handleLikeClick} id={listing.id} ></span></a>
+                        <a href="#" className="btn btn-default like-button" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" id={listing.id} ></span></a>
                         {that.displayLikers(listing)}
-
-                        {that.displayComments(listing)}
-                        <NewComment onNewComment={that.onNewComment} listing_id={listing.id}/>
+                        <sup className="likers liked-your-post">liked your post.</sup>
+                        <br/>
+                        <hr></hr>
+                        <div className="comment-box">
+                          <label>Comments: </label>
+                          {that.displayComments(listing)}
+                          <br/>
+                          <NewComment onNewComment={that.onNewComment} listing_id={listing.id}/>
+                        </div>
 
                     </li>
               );})}

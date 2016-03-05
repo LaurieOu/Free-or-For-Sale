@@ -9,7 +9,7 @@ class Api::LikesController < ApplicationController
       @listings = Listing.all
       render "api/listings/index"
     else
-      render json: {}, status: 420
+      render json: {errors: @like.errors.full_messages}, status: 420
     end
   end
 

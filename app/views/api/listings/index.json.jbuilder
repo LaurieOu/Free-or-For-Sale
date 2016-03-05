@@ -2,6 +2,7 @@
 json.array! @listings do |listing|
   # json.title listing.title
   json.extract!(listing, :title, :description, :price, :id, :category_id)
+  json.timestamp listing.date_and_time
   json.university listing.university.name
   json.user listing.user.username
   json.category listing.category.category_name
@@ -14,6 +15,7 @@ json.array! @listings do |listing|
     json.body comment.body
     json.listing_id comment.listing_id
     json.user comment.user.username
+    json.image comment.user.image
   end
 
   json.likersListing(listing.likers) do |liker|

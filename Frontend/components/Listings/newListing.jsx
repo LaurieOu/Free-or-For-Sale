@@ -98,11 +98,12 @@ var mostRecentItemsForm = React.createClass(
 
             <select
               value = {this.state.category_id}
-              onChange={this.handleCategoryChange}>
+              onChange={this.handleCategoryChange}
+              className="select-category-dropdown">
               {options}
             </select><br/>
 
-            <button className="btn btn-default"onClick={this.uploadImage}>Add Image</button>
+            <button className="btn btn-default"onClick={this.uploadImage}>Add Image (Optional)</button>
 
             { this.state.images.map(function(image) {
               return <img src={image.url} />
@@ -110,7 +111,7 @@ var mostRecentItemsForm = React.createClass(
 
             <br/>
 
-            <input type="submit" value="Submit"/>
+            <input className="btn btn-default" type="submit" value="Submit"/>
 
 
           </div>

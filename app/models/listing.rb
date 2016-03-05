@@ -22,7 +22,7 @@ class Listing < ActiveRecord::Base
   belongs_to :category
   has_many :comments
   has_many :likes
-  has_many :images 
+  has_many :images
 
   has_many(
     :likers,
@@ -30,7 +30,10 @@ class Listing < ActiveRecord::Base
     source: :user
   )
 
-
+  def date_and_time
+    t = self.created_at.in_time_zone('Eastern Time (US & Canada)')
+    t.strftime("%B") + " " + t.strftime("%d") + " " + t.strftime("%Y") + " " + t.strftime('%r')
+  end
 
 
 end
