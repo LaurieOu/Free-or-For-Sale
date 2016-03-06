@@ -38,18 +38,13 @@ var Listings = React.createClass({
      </ul>
     );
   },
-  displayLikers: function(listing)
-  {
-    return
-    (
+  displayLikers: function(listing) {
+    return (
       <ul>
        {listing.likersListing.map(function(liker) {
-         return(
-             <li className="likers">{liker.username} </li>
-         )})
-       }
-     </ul>
-    );
+         return(<li className="likers">{liker.username} </li>);
+       })}
+     </ul>);
   },
   displayImages: function(listing) {
     var defaultImages = ["http://cdn.paper4pc.com/images/nature-animals-dogs-puppies-wallpaper-3.jpg",
