@@ -92,13 +92,13 @@ var Listings = React.createClass({
   },
   handleLikeClick: function(e) {
     e.preventDefault();
-    if (this.state.liked === false ) {
-      apiUtil.createLike({listing_id: e.target.id});
-      this.state.liked = true;
+    if (ListingsStore.hasLike(e.target.id) ) {
+      apiUtil.deleteLike({listing_id: e.target.id});
+      // this.state.liked = true;
       // this.setState({liked: true});
     } else {
-      apiUtil.deleteLike({listing_id: e.target.id});
-      this.state.liked = false;
+      apiUtil.createLike({listing_id: e.target.id});
+      // this.state.liked = false;
       // this.setState({liked: false});
     }
 

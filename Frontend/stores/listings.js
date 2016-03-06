@@ -17,6 +17,24 @@ ListingsStore.all = function(listings) {
   return _listings.slice(0);
 };
 
+ListingsStore.hasLike = function(listing_id) {
+  var alreadyLiked = false;
+  var selectedListing = "";
+
+  _listings.forEach(function(listing) {
+    if(listing.id === Number(listing_id)) {
+      selectedListing = listing
+    }
+  });
+  selectedListing.likersListing.forEach(function(liker) {
+    if (liker.username === window.user.username) {
+      alreadyLiked = true;
+    }
+  });
+
+  return alreadyLiked;
+};
+
 ListingsStore.__onDispatch = function (payload) {
 switch(payload.actionType) {
   case ListingsConstants.LISTINGS_RECEIVED:
