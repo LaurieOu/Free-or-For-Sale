@@ -38,13 +38,18 @@ var Listings = React.createClass({
      </ul>
     );
   },
-  displayLikers: function(listing) {
-    return (
+  displayLikers: function(listing)
+  {
+    return
+    (
       <ul>
        {listing.likersListing.map(function(liker) {
-         return(<li className="likers">{liker.username} </li>);
-       })}
-     </ul>);
+         return(
+             <li className="likers">{liker.username} </li>
+         )})
+       }
+     </ul>
+    );
   },
   displayImages: function(listing) {
     var defaultImages = ["http://cdn.paper4pc.com/images/nature-animals-dogs-puppies-wallpaper-3.jpg",
@@ -120,7 +125,7 @@ var Listings = React.createClass({
               return (
                     <li key={listing.id} className="listing-container">
                       <ul>
-                        <li key="pic" className="user-display"><img src={that.profileImage(listing)} className="img-circle" height="200" weight="200"/> {listing.user}</li>
+                        <li key="pic" className="user-display"><img src={that.profileImage(listing)} className="img-circle"/> {listing.user}</li>
                         <div className="listing-info-box">
                           <li key="title" className="listing-font"><b>Title:</b> {listing.title}</li>
                           <li key="category" className="listing-font"><b>Category:</b> {listing.category}</li>
@@ -135,7 +140,7 @@ var Listings = React.createClass({
                         <br/>
                         <a href="#" className="btn btn-default like-button" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" id={listing.id} ></span></a>
                         {that.displayLikers(listing)}
-                        <sup className="likers liked-your-post">liked your post.</sup>
+
                         <br/>
                         <hr></hr>
                         <div className="comment-box">

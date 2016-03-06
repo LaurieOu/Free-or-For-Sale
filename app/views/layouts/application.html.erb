@@ -6,9 +6,11 @@
   <%= csrf_meta_tags %>
   <% if current_user %>
     <% username = current_user.username %>
+    <% university = current_user.university.name %>
       <script type="text/javascript">
         window.user = {
           username: "<%=username%>",
+          university: "<%=university%>"
         };
       </script>
   <% else %>
