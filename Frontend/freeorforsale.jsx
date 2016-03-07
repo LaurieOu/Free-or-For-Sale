@@ -7,6 +7,7 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var browserHistory = require('react-router').browserHistory;
 var App = require('./components/app');
+var User = require('./components/user/user')
 
 
 
@@ -14,6 +15,8 @@ var routes = (
   <Route path="/" component={App} >
     <Route path=":category" component={FormAndListings} />
   </Route>
+
+
 );
 
 

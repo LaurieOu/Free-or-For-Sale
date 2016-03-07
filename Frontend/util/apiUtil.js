@@ -53,6 +53,15 @@ var apiUtil = {
       }
     });
   },
+  fetchSingleUser: function(id) {
+    $.ajax({
+      url: 'api/users/' + id,
+      type: 'GET',
+      success: function (user) {
+        ApiActions.receiveSingleUser(user);
+      }
+    });
+  }
 };
 
 module.exports = apiUtil;

@@ -96,13 +96,13 @@ Category.create!([
   ])
 
 Listing.create!([
-  {title: "Plays, books, and textbooks", description: "Fun reads for a good price", price: 5, university_id: 1, category_id: 1, user_id: 1, archived: true},
+  {title: "Plays, books, and textbooks", description: "Fun reads for a good price", price: 5, university_id: 1, category_id: 1, user_id: 13, archived: true},
   {title: "Lamp and decorative lanterns", description: "Fiat Lux, from ikea, relatively new", price: 10, university_id: 1, category_id: 2, user_id: 2, archived: true},
   {title: "Pink Palace", description: "Where the princesses live, has two balconies, 3 parking spaces, and 7 miles from Santa Monica beach", price: 4900, university_id: 1, category_id: 3, user_id: 7, archived: true},
   {title: "nice dresses", description: "ate too much, doesn't fit anymore, only worn once", price: 20, university_id: 1, category_id: 4, user_id: 4, archived: true},
   {title: "iPod", description: "plays music, comes in a plethora of colors", price: 1000, university_id: 1, category_id: 5, user_id: 5, archived: true},
   {title: "cats", description: "my cat just had 23 babies and I don't know what to do with all these kittens in need of tlc", price: 0, university_id: 1, category_id: 6, user_id: 6, archived: true},
-  {title: "services", description: "professional cuddler for those cold winter nights", price: 60, university_id: 1, category_id: 9, user_id: 8, archived: true},
+  {title: "services", description: "professional cuddler for those cold winter nights", price: 60, university_id: 1, category_id: 7, user_id: 8, archived: true},
   {title: "in house cook", description: "includes the price of groceries. The best of the best chefs from 3 Michelin star restaurants", price: 100, university_id: 1, category_id: 8, user_id: 12, archived: true},
   {title: "taylor swift", description: "1989 album, Grammy award winning album", price: 10, university_id: 1, category_id: 9, user_id: 1, archived: true},
   {title: "self portrait of laurie", description: "personal masterpiece", price: 1000000, university_id: 1, category_id: 10, user_id: 7, archived: true}
