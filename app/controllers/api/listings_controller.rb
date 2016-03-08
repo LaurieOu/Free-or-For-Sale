@@ -40,9 +40,6 @@ class Api::ListingsController < ApplicationController
     end
 
 
-    # new_listing_params["images"] = newImages
-
-
     if @listing.save
       if urls.length != 0
         urls.each do |url|

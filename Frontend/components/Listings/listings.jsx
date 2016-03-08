@@ -31,7 +31,7 @@ var Listings = React.createClass({
             comment.image = "https://lh3.googleusercontent.com/proxy/huJW3Lth9HYrcsW515H_r8rPGZUWw9hF5J_cCiJ7Me5wjuqimdsHoEqyCYTfCO5eoLKtVZuyjLBRi3_z8QeJmw=w426-h240-n"
           }
           return (
-              <li><img src={comment.image} className="img-circle comment-img-circle" height="20" weight="20"/>{comment.user}: {comment.body}</li>
+              <li key={comment.id}><img src={comment.image} className="img-circle comment-img-circle" height="20" weight="20"/>{comment.user}: {comment.body}</li>
             );
 
         })}
@@ -42,7 +42,7 @@ var Listings = React.createClass({
     return (
       <ul>
        {listing.likersListing.map(function(liker) {
-         return(<li className="likers">{liker.username} </li>);
+         return(<li className="likers" key={liker.id}>{liker.username} </li>);
        })}
      </ul>);
   },
@@ -66,14 +66,16 @@ var Listings = React.createClass({
         );
       });} else {
       var images = listing.images.map(function(image) {
-        return ({
-          original: image.url,
-          thumbnail: image.url,
-          originalClass: 'featured-slide',
-          thumbnailClass: 'featured-thumb',
-          originalAlt: 'original-alt',
-          thumbnailAlt: 'thumbnail-alt',
-        });
+        return (
+          {
+            original: image.url,
+            thumbnail: image.url,
+            originalClass: 'featured-slide',
+            thumbnailClass: 'featured-thumb',
+            originalAlt: 'original-alt',
+            thumbnailAlt: 'thumbnail-alt',
+          }
+      );
       });
 
     }
