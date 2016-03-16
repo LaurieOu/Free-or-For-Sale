@@ -3,8 +3,35 @@
   <br>
   <label class='for-university-students'>For University Students</label>
   <br>
-  <img src="http://picplus.com/files/grad_cap.png" alt="Grad Cap" height="300" width="300" class="grad-cap">
-<div class="auth-container">
+
+  <div class="guest-sign-in-laurie">
+    <form action="<%= session_url %>" method="post" class="auth_token">
+
+      <input
+      type="hidden"
+      name="authenticity_token"
+      id=""
+      value="<%= form_token %>">
+
+
+      <input
+      type="hidden"
+      name="user[username]"
+      id="user_username"
+      value="laurieou">
+
+
+      <input
+      type="hidden"
+      name="user[password]"
+      id="user_password"
+      value="laurie">
+
+      <input class="guest-sign-in-laurie-button" type="submit" value="Demo Sign In as Laurie">
+    </form>
+  </div>
+
+<div class="auth-container-sign-up">
 
     <div class="fofs-title">
     </div>
@@ -20,7 +47,7 @@
           <br>
           <br>
 
-          <label class='whitetext' for="Username">Univ Email</label>
+          <label class='whitetext' for="Useremail">Univ Email</label>
           <input type="text" name="user[email]">
           <br>
           <br>
@@ -30,8 +57,9 @@
           <br>
           <br>
 
+
           <label class='whitetext' for="University">University</label>
-          <select type="text" name="user[university_id]">
+          <select type="text" class="university-box" name="user[university_id]">
             <option></option>
             <option value='<%=1%>'>UCLA</option>
             <option value='<%=2%>'>UCBerkeley</option>
