@@ -81,6 +81,10 @@ var mostRecentItemsForm = React.createClass(
         }
       }.bind(this), false);
     },
+    closeForm: function(event) {
+      event.preventDefault();
+      this.setState({expanded: false})
+    },
     render: function() {
       var extraContent = "";
 
@@ -111,7 +115,8 @@ var mostRecentItemsForm = React.createClass(
 
             <br/>
 
-            <input className="btn btn-default" type="submit" value="Submit"/>
+            <input className="btn btn-default submit-button" type="submit" value="Submit"/>
+            <button className="btn btn-default close-form-button" onClick={this.closeForm}>X</button>
 
 
           </div>
