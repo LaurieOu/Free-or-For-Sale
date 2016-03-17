@@ -96,7 +96,6 @@ var Listings = React.createClass({
     e.preventDefault();
     if (ListingsStore.hasLike(e.target.id) ) {
       apiUtil.deleteLike({listing_id: e.target.id});
-      // this.state.liked = true;
       // this.setState({liked: true});
     } else {
       apiUtil.createLike({listing_id: e.target.id});

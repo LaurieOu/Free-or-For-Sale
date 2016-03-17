@@ -15,7 +15,7 @@ var Login = React.createClass({
       }
     });
   },
-  handleHomeClick: function() {
+  handleAllListingsClick: function() {
     apiUtil.fetchAllListings();
     browserHistory.push("/Home");
   },
@@ -29,7 +29,7 @@ var Login = React.createClass({
     if (window.user.username) {
       login = (
         <ul className="nav nav-pills">
-          <li role="presentation" className="active" onClick={this.handleHomeClick}><a href="#" className="pill-text" >Home</a></li>
+          <li role="presentation" className="active" onClick={this.handleAllListingsClick}><a href="#" className="pill-text" >All Listings</a></li>
           <li role="presentation"  onClick={this.handleSignOutClick}><a href="#" className="pill-text">Log Out</a></li>
         </ul>
       );
