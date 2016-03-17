@@ -15,7 +15,7 @@ var App = React.createClass({
         <LoginBar />
         <Categories />
 
-        <div>
+        <div className="everything-container">
           {this.props.children}
         </div>
       </div>
