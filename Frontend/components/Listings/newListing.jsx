@@ -89,7 +89,7 @@ var mostRecentItemsForm = React.createClass(
       var extraContent = "";
 
       var options = _categories.map(function(el, i){
-        return <option value={i} >{el}</option>;
+        return <option key={i} value={i} >{el}</option>;
       }.bind(this));
 
       if(this.state.expanded) {
@@ -114,7 +114,7 @@ var mostRecentItemsForm = React.createClass(
               return (
                 <div>
                   <br/>
-                  <img src={image.url} />
+                  <li key={image.id}><img src={image.url} /></li>
                   <br/>
                 </div>)
             })}

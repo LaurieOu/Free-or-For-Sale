@@ -25,5 +25,6 @@ json.array! @listings do |listing|
 
   json.images(listing.images) do |image|
     json.url image.url
+    json.id image.id
   end
 end
