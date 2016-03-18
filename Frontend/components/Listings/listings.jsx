@@ -38,14 +38,14 @@ var Listings = React.createClass({
      </ul>
     );
   },
-  // displayLikers: function(listing) {
-  //   return (
-  //     <ul>
-  //      {listing.likersListing.map(function(liker) {
-  //        return(<li className="likers" key={liker.id}>{liker.username} </li>);
-  //      })}
-  //    </ul>);
-  // },
+  displayLikers: function(listing) {
+    return (
+      <ul>
+       {listing.likersListing.map(function(liker) {
+         return(<li className="likers" key={liker.user_id}>{liker.username} </li>);
+       })}
+     </ul>);
+  },
   displayImages: function(listing) {
     var defaultImages = ["http://cdn.paper4pc.com/images/nature-animals-dogs-puppies-wallpaper-3.jpg",
                       "http://www.pics4world.com/vb/nicecache/2/6061showing.jpg",
@@ -135,11 +135,7 @@ var Listings = React.createClass({
 
                         <br/>
                         <div className="btn btn-default like-button" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" id={listing.id} ></span></div>
-                        <ul>
-                         {listing.likersListing.map(function(liker) {
-                           return(<li className="likers" key={liker.id}>{liker.username} </li>);
-                         })}
-                       </ul>
+                        {that.displayLikers(listing)}
 
                         <br/>
                         <hr></hr>
