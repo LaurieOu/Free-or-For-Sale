@@ -115,6 +115,10 @@ ul {
 
 }
 
+.username-fix-position {
+  color: white;
+}
+
 .session-password {
   left: 360px;
   border-radius: 9px;
@@ -213,6 +217,7 @@ ul {
   text-align: center;
   margin-top: 25px;
   width: 100%;
+  position: relative;
   background: rgba(0,0,0, 0.3);
   padding: 30px 20px 30px 20px;
   border-style: solid;
@@ -221,9 +226,9 @@ ul {
 }
 
 .close-form-button {
-  position: relative;
-  left:45.5%;
-  top: -381px;
+  position: absolute;
+  right: 2px;
+  top: -12px;
   background-color: rgba(0,0,0, 0.3);
   color: white;
 }

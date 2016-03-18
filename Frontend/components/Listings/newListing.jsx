@@ -109,8 +109,14 @@ var mostRecentItemsForm = React.createClass(
 
             <button className="btn btn-default"onClick={this.uploadImage}>Add Image (Optional)</button>
 
+
             { this.state.images.map(function(image) {
-              return <img src={image.url} />
+              return (
+                <div>
+                  <br/>
+                  <img src={image.url} />
+                  <br/>
+                </div>)
             })}
 
             <br/>

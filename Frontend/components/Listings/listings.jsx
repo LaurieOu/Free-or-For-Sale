@@ -38,14 +38,14 @@ var Listings = React.createClass({
      </ul>
     );
   },
-  displayLikers: function(listing) {
-    return (
-      <ul>
-       {listing.likersListing.map(function(liker) {
-         return(<li className="likers" key={liker.id}>{liker.username} </li>);
-       })}
-     </ul>);
-  },
+  // displayLikers: function(listing) {
+  //   return (
+  //     <ul>
+  //      {listing.likersListing.map(function(liker) {
+  //        return(<li className="likers" key={liker.id}>{liker.username} </li>);
+  //      })}
+  //    </ul>);
+  // },
   displayImages: function(listing) {
     var defaultImages = ["http://cdn.paper4pc.com/images/nature-animals-dogs-puppies-wallpaper-3.jpg",
                       "http://www.pics4world.com/vb/nicecache/2/6061showing.jpg",
@@ -96,11 +96,11 @@ var Listings = React.createClass({
     e.preventDefault();
     if (ListingsStore.hasLike(e.target.id) ) {
       apiUtil.deleteLike({listing_id: e.target.id});
-      // this.setState({liked: true});
+      this.setState({liked: true});
     } else {
       apiUtil.createLike({listing_id: e.target.id});
       // this.state.liked = false;
-      // this.setState({liked: false});
+      this.setState({liked: false});
     }
 
   },
@@ -134,8 +134,12 @@ var Listings = React.createClass({
                         {that.displayImages(listing)}
 
                         <br/>
-                        <a href="#" className="btn btn-default like-button" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" id={listing.id} ></span></a>
-                        {that.displayLikers(listing)}
+                        <div className="btn btn-default like-button" onClick={that.handleLikeClick} id={listing.id}><span className="glyphicon glyphicon-thumbs-up" id={listing.id} ></span></div>
+                        <ul>
+                         {listing.likersListing.map(function(liker) {
+                           return(<li className="likers" key={liker.id}>{liker.username} </li>);
+                         })}
+                       </ul>
 
                         <br/>
                         <hr></hr>
