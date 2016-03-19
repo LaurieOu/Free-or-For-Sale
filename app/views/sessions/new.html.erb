@@ -40,11 +40,10 @@
         <h1 class='whitetext'>Sign In</h1>
 
         <form class="form-group" action="<%= session_url %>" method="post">
-          <%= form_token %>
+          <%= form_token %></br>
 
 
-          <label class='whitetext'>Username</label> 
-          <label class='whitetext' for="Username">Username</label>
+          <label class='whitetext-session' for="Username">Username</label>
           <input type="text" name="user[username]">
           <br>
           <br>

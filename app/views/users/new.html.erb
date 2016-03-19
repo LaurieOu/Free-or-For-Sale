@@ -4,7 +4,7 @@
   <label class='for-university-students'>For University Students</label>
   <br>
 
-  <div class="guest-sign-in-laurie">
+  <div class="guest-sign-up-laurie">
     <form action="<%= session_url %>" method="post" class="auth_token">
 
       <input
@@ -40,7 +40,7 @@
         <h1 class='whitetext'>Sign Up</h1>
 
         <form class="form-group" action="<%= users_url %>" method="post">
-          <%= form_token %>
+          <%= form_token %><br/>
 
           <label class='whitetext' for="Username">Username</label>
           <input type="text" name="user[username]">
