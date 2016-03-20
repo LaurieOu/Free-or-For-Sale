@@ -30,9 +30,20 @@ var apiUtil = {
     });
   },
   createListing: function(newlisting){
-    $.post('api/listings', { listing: newlisting }, function(listing) {
-      ApiActions.receiveNewListing(listing);
-      });
+    $.ajax({
+      url: "api/listings",
+      method: "POST",
+      data: {listing: newlisting},
+      success: function (listing) {
+        ApiActions.receiveNewListing(listing);
+      },
+      error: function(error) {
+        ApiActions.formError(error);
+      }
+    });
+    // $.post('api/listings', { listing: newlisting }, function(listing) {
+    //   ApiActions.receiveNewListing(listing);
+    //   });
     },
   createComment: function(newComment) {
     $.post('api/comments', {comment: newComment}, function(listings) {

@@ -24,6 +24,10 @@ var Listings = React.createClass({
     this.listingsListener.remove();
   },
   displayComments: function (listing) {
+    if (listing.images === undefined) {
+      return;
+    }
+    
       return (
       <ul>
         {listing.comments.map(function(comment) {
@@ -39,6 +43,10 @@ var Listings = React.createClass({
     );
   },
   displayLikers: function(listing) {
+    if (listing.images === undefined) {
+      return;
+    }
+
     return (
       <ul>
        {listing.likersListing.map(function(liker) {
@@ -47,6 +55,10 @@ var Listings = React.createClass({
      </ul>);
   },
   displayImages: function(listing) {
+    if (listing.images === undefined) {
+      return;
+    }
+
     var defaultImages = ["http://cdn.paper4pc.com/images/nature-animals-dogs-puppies-wallpaper-3.jpg",
                       "http://www.pics4world.com/vb/nicecache/2/6061showing.jpg",
                     "http://2.bp.blogspot.com/-4HwmYrSvBNs/U_RJt0Gz1gI/AAAAAAAAC7U/j7wyHx83-fQ/s1600/nature-animals-47.jpg"];

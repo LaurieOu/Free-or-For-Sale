@@ -30,7 +30,7 @@ var Login = React.createClass({
       login = (
         <ul className="nav nav-pills">
           <li role="presentation" className="active" onClick={this.handleAllListingsClick}><a href="#" className="pill-text" >All Listings</a></li>
-          <li role="presentation"  onClick={this.handleSignOutClick}><a href="#" className="pill-text">Log Out</a></li>
+          <li role="presentation"  onClick={this.handleSignOutClick}><a href="#" className="pill-text log-out-button">Log Out</a></li>
         </ul>
       );
     }

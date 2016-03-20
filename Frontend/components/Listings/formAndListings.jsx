@@ -9,7 +9,7 @@ var FormAndListing = React.createClass({
     if (window.user.university === "UCLA") {
       universityLogo = (
       <div className="university-logo-image">
-        <img src="https://brand.ucla.edu/wp-content/uploads/2013/08/ucla-wordmark-main-1.jpg" className="university-banner"/>
+        <img src="http://www.roshan-institute.org/clientimages/39783/UCLA%20logo.jpg" className="university-banner"/>
         <img src="http://www.amoeba.com/admin/uploads/blog/Eric_B/RoyceHallatSunset.jpg"  className="university-banner" />
       </div> );
     } else if (window.user.university === "Berkeley") {
