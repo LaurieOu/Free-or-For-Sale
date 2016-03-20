@@ -1,5 +1,5 @@
 
-json.array! @listings do |listing|
+result = json.array! @listings.reverse do |listing|
   # json.title listing.title
   json.extract!(listing, :title, :description, :price, :id, :category_id)
   json.timestamp listing.date_and_time

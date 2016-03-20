@@ -10,7 +10,8 @@ var resetListings = function(listings) {
 };
 
 var addNewListing = function(newListing) {
-  _listings.push(newListing);
+  _listings.unshift(newListing);
+  debugger;
 };
 
 ListingsStore.all = function(listings) {
