@@ -29,6 +29,7 @@ var Login = React.createClass({
     if (window.user.username) {
       login = (
         <ul className="nav nav-pills">
+          <li role="presentation" onClick={this.handleAllListingsClick}><a href="#" className="pill-text logo-hover"><img src={'https://www.pleasantsolutions.com/media/redesign/icon_experts.png'} alt="FOFSLOGO" className="logo"/></a></li>
           <li role="presentation" className="active" onClick={this.handleAllListingsClick}><a href="#" className="pill-text" >All Listings</a></li>
           <li role="presentation"  onClick={this.handleSignOutClick}><a href="#" className="pill-text log-out-button">Log Out</a></li>
         </ul>

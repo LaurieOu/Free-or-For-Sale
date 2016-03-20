@@ -2,7 +2,6 @@ var React = require('react');
 var apiUtil = require('../../util/apiUtil');
 var Error = require('../Error/error');
 
-
 // var History = require('react-router').History;
 
 var _categories =

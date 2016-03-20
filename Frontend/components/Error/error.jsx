@@ -16,6 +16,7 @@ var Error = React.createClass({
   componentWillUnmount: function() {
     this.errorListener.remove();
     ErrorStore.resetErrors();
+    this.setState({error: ""});
   },
   render: function() {
     return(
