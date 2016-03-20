@@ -1,5 +1,6 @@
 var React = require('react');
 var apiUtil = require('../../util/apiUtil');
+var Error = require('../Error/error');
 
 
 // var History = require('react-router').History;
@@ -123,8 +124,6 @@ var mostRecentItemsForm = React.createClass(
 
             <input className="btn btn-default submit-button" type="submit" value="Submit"/>
             <button className="btn btn-default close-form-button" onClick={this.closeForm}>X</button>
-
-
           </div>
         )
       };
@@ -140,6 +139,7 @@ var mostRecentItemsForm = React.createClass(
            onChange={this.handleTitleChange}/><br/>
 
           {extraContent}
+          <Error />
         </form>
       )
     }
