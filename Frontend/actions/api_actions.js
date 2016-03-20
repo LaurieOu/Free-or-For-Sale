@@ -3,6 +3,7 @@ var ListingsConstants = require('../constants/listings_constants');
 var CategoriesConstants = require('../constants/categories_constants');
 var CommentsConstants = require('../constants/comments_constants');
 var UserConstants = require('../constants/user_constants');
+var ErrorConstants = require('../constants/error_constants');
 
 
 var ApiActions = {
@@ -29,6 +30,12 @@ var ApiActions = {
       actionType: UserConstants.USER_RECEIVED,
       user: user
     })
+  },
+  formError: function(error) {
+    AppDispatcher.dispatch({
+      actionType: ErrorConstants.ERROR,
+      error: error
+    });
   }
 };
 
