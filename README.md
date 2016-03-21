@@ -1,8 +1,8 @@
 # Free or For Sale
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://www.freeorforsale.club
 
 ## Minimum Viable Product
 
@@ -17,10 +17,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Log in / Log out
 - [ ] Locate specific university's Free or For Sale page
 - [ ] See sale items from 11 different categories
-- [ ] Users can Create, read, edit, and delete Listings
-- [ ] Buyers and sellers can message each other
-- [ ] Users can like, comment, or star a listing
-- [ ] Users can track their sell and stared items
+- [ ] Users can Create and browse Listings
+- [ ] Users can like or comment on a listing
 
 ## Design Docs
 * [View Wireframes][views]
@@ -41,9 +39,17 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 ### University Store
 
 **Objective:** In Phase 1, I will begin by implementing user signup and
-authentication (using BCrypt). If a user clicks the 'find your university'
-button, they will be directed to a page with a drop down box where they can
-select then view any university's Free and For Sale page.
+authentication (using BCrypt).
+
+![alt tag] (http://res.cloudinary.com/ddefvho7g/image/upload/v1458543911/Screen_Shot_2016-03-21_at_12.03.37_AM_xefr1a.png)
+
+Users can create an account and they will be
+directed to their universities' page depending on their registered university.
+Different universities will have different splash pages.
+
+![alt tag] (http://res.cloudinary.com/ddefvho7g/image/upload/v1458543910/Screen_Shot_2016-03-21_at_12.04.00_AM_ltyiu6.png)
+
+![alt tag] (http://res.cloudinary.com/ddefvho7g/image/upload/v1458543911/Screen_Shot_2016-03-21_at_12.04.27_AM_vuzfib.png)
 
 - [x] create new project
 - [x] create `User` model
@@ -60,10 +66,18 @@ select then view any university's Free and For Sale page.
 
 **Objective:** Creating the University's Page. 11 categories will be created
 with working buttons to the category's items page. The default category will
-be 'Most Recent.' Create pop up 'Sell Something' box. Ensure that only users
+be 'All Listings'
+
+![alt tag] (http://res.cloudinary.com/ddefvho7g/image/upload/v1458544139/Screen_Shot_2016-03-21_at_12.07.51_AM_l4h7pp.png)
+
+Create drop down 'Sell Something' box. Ensure that only users
 from that university have access to the 'Sell Something' box. Listings can be
-created, read, edited and destroyed with the user interface only if it
+created and read with the user interface only if it
 belongs to User.  
+
+![alt tag] (http://res.cloudinary.com/ddefvho7g/image/upload/v1458544140/Screen_Shot_2016-03-21_at_12.08.08_AM_y3wjk8.png)
+
+![alt tag] (http://res.cloudinary.com/ddefvho7g/image/upload/v1458544140/Screen_Shot_2016-03-21_at_12.08.32_AM_eonwf5.png)
 
 - [ ] create `Category` model
 - [ ] create `Listing` model
@@ -75,22 +89,23 @@ belongs to User.
 - [ ] test out API interaction in the console.
 
 
-### Phase 3: Likes, Comment, Starred, and Pictures Model, API, and
+### Phase 3: Likes, Comment and Pictures Model, API, and
 ### basic APIUtil, REACT, FlUX Components (1.5 days)
 
-**Objective:** Add likes, comments, starred, pictures and 'comment
-user' to the listing. Pictures should maximize and have a left-right option.
+**Objective:** Add likes, comments, pictures and 'comment
+user' to the listing. Implemented React-Image-Gallery to have sliding pictures.
+
+![alt tag] (http://res.cloudinary.com/ddefvho7g/image/upload/v1458544406/Screen_Shot_2016-03-21_at_12.12.51_AM_eet6hs.png)
 
 - [ ] create `Likes` model
 - [ ] create `Comments` model
-- [ ] create `Starred` model
 - [ ] create `Pictures` model
 - [ ] seed the database with a small amount of test data
 - [ ] jBuilder views for all those models
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 4: Messages and Message Box Model, API, and
+<!-- ### Phase 4: Messages and Message Box Model, API, and
 ### basic APIUtil, REACT, FlUX Components (1 days)
 
 **Objective:** Add a 'Message Me' button to the listing. When a user clicks
@@ -102,8 +117,8 @@ the button, a FB-like messaging system pops up.
 - [ ] jBuilder views for all those models
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
-
+- [ ] test out API interaction in the console. -->
+<!--
 ### Phase 5: User's Home Page and basic APIUtil, REACT, FlUX Components (1 day) BONUS
 
 **Objective:** A page that has two tabs listing items the User is selling or
@@ -112,11 +127,11 @@ date posted, price and sold/delete button.
 
 - [ ] jBuilder views for all those models
 - [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [ ] test out API interaction in the console. -->
 
 
 
-### Phase 6: Start Styling (0.5 days)
+### Phase 4: Start Styling (0.5 days)
 
 **Objective:** Finishing touches on everything
 
@@ -129,5 +144,5 @@ date posted, price and sold/delete button.
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+<!-- [phase-four]: ./docs/phases/phase4.md
+[phase-five]: ./docs/phases/phase5.md -->

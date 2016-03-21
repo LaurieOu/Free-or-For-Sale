@@ -16,18 +16,11 @@
 
 ## JSON API
 
-### Posts
+### Listings
 
-- `GET /api/university/posts`
-  - Posts index/search
-- `POST /api/university/posts`
-- `GET /api/university/post/:id`
-- `PATCH /api/university/post/:id`
-- `DELETE /api/university/post/:id`
-
-### Messages
-
-- `GET /api/user/:id/message/:id`
-- `POST /api/user/:id/message/:id`
-- `PATCH /api/user/:id/message/:id`
-- `DELETE /api/user/:id/message/:id`
+- `GET /api/university/listings`
+  - Listings index/search
+- `POST /api/university/listings`
+- `GET /api/university/listing/:id`
+- `PATCH /api/university/listing/:id`
+- `DELETE /api/university/listing/:id`

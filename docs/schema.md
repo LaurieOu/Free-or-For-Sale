@@ -47,14 +47,6 @@ user_id     | integer   | not null, foreign key (references users), indexed
 listing_id  | integer   | not null, foreign key (references users), indexed
 
 
-## Starred
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-listing_id  | integer   | not null, foreign key (references users), indexed
-
-
 ## Comments
 column name | data type | details
 ------------|-----------|-----------------------
@@ -69,13 +61,3 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 listing_id  | integer   | not null, foreign key (references users), indexed
-
-
-## Messages
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-receiver_id | integer   | not null, foreign key (references users), indexed
-item_title  | string    | not null
-body        | text      |

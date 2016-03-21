@@ -1,66 +1,43 @@
 # Flux Stores
 
-### PostStore
+### ListingStore
 
 Holds all persisted note data.
 
 ##### Actions:
-- `receiveAllPosts`
-- `receiveSinglePost`
-- `removePost`
+- `receiveAllListings`
+- `receiveSingleListing`
 
 ##### Listeners:
-- `PostsIndex` (passes to `PostIndexItem` via props)
-- `PostDetail`
+- `ListingsIndex` (passes to `ListingIndexItem` via props)
 
-### PostFormStore
+### ListingFormStore
 
 Holds un-persisted note data to send to the API.
 
 ##### Actions:
-- `receivePostFormParams`
+- `receiveListingFormParams`
 
 ##### Listeners:
-- `PostForm`
+- `ListingForm`
 
-### PostStore
+### ListingStore
 
 Holds all persisted notebook data.
 
 ##### Actions:
-- `receiveAllPosts`
-- `receiveSinglePost`
-- `removePost`
+- `receiveAllListings`
+- `receiveSingleListing`
 
 ##### Listeners:
-- `PostIndex`
+- `ListingIndex`
 
 ### NotebookFormStore
 
 Holds un-persisted notebook data to send to the API.
 
 ##### Actions:
-- `receivePostFormParams`
+- `receiveListingFormParams`
 
 ##### Listeners:
-- `PostForm`
-
-### SearchStore
-
-Holds search parameters to send to the API.
-
-##### Actions:
-- `receiveSearchParams`
-
-##### Listeners:
-- `SearchIndex`
-
-### SearchSuggestionStore
-
-Holds typeahead suggestions for search.
-
-##### Actions:
-- `receiveSearchSuggestions`
-
-##### Listeners:
-- `SearchSuggestions`
+- `ListingForm`
