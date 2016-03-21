@@ -1,5 +1,4 @@
 var React = require('react');
-var apiUtil = require('../../util/apiUtil');
 var browserHistory = require('react-router').browserHistory;
 
 

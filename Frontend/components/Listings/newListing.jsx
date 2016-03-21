@@ -1,6 +1,7 @@
 var React = require('react');
 var apiUtil = require('../../util/apiUtil');
 var Error = require('../Error/error');
+var browserHistory = require('react-router').browserHistory;
 
 // var History = require('react-router').History;
 
@@ -56,6 +57,7 @@ var mostRecentItemsForm = React.createClass(
     handleSubmit: function(e) {
       e.preventDefault();
       apiUtil.createListing(this.state);
+      var category_name = _categories[this.state.category_id];
       this.setState({expanded: false,
               title: "",
               description: "",
@@ -64,6 +66,7 @@ var mostRecentItemsForm = React.createClass(
               category_id: this.props.category_id,
               images: []
       })
+      browserHistory.push(category_name);
     },
     uploadImage: function (event) {
       event.preventDefault();

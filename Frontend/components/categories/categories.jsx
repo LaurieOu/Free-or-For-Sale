@@ -1,7 +1,6 @@
 var React = require('react');
 var CategoriesStore = require('../../stores/categories');
 var apiUtil = require('../../util/apiUtil');
-var NewListing = require('../Listings/newListing');
 var CategoryIndexItem = require('./categoryIndexItem');
 var browserHistory = require('react-router').browserHistory;
 
@@ -9,7 +8,7 @@ var browserHistory = require('react-router').browserHistory;
 
 var Categories = React.createClass({
   getInitialState: function() {
-    return {categories: CategoriesStore.all(), category_id: "", renderNewListing: false}
+    return {categories: CategoriesStore.all(), category_id: ""}
   },
   _onChange: function () {
     this.setState({categories: CategoriesStore.all()});
