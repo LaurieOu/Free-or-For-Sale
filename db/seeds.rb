@@ -90,7 +90,7 @@ Category.create!([
   {category_name: "Electronics" },
   {category_name: "Free" },
   {category_name: "Services" },
-  {category_name: "WorkOpportunities" },
+  {category_name: "Jobs" },
   {category_name: "Music" },
   {category_name: "Other" }
   ])

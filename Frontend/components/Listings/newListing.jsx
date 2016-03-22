@@ -14,7 +14,7 @@ var _categories =
                 "Electronics",
                 "Free",
                 "Services",
-                "WorkOpportunities",
+                "Jobs",
                 "Music",
                 "Other"];
 
