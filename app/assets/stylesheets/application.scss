@@ -19,6 +19,8 @@
  @import "../../../node_modules/react-image-gallery/src/ImageGallery";
 
 
+*{font-family: 'Maven Pro', sans-serif;}
+
  .auth-body {
    position: relative;
    display: block;
@@ -35,9 +37,8 @@
  }
 
  .guest-sign-in-laurie {
-   position: absolute;
-   top: 43%;
-   right: 42.5%;
+   margin-bottom: 15px;
+   margin-top: 20px;
    z-index: 2;
  }
 
@@ -49,9 +50,8 @@
  }
 
  .guest-sign-up-laurie {
-   position: absolute;
-   top: 50%;
-   right: 43%;
+   margin-bottom: 15px;
+   margin-top: 20px;
    z-index: 2;
  }
 
@@ -151,7 +151,6 @@ ul {
 
 .navbar {
   background: rgba(0,0, 0, 0.8);
-
 }
 
 .categoryIndexItem {
@@ -179,7 +178,7 @@ ul {
 }
 
 .log-out-button {
-  left: 1075%;
+  left: 950%;
 }
 
 .categoryIndexItem {

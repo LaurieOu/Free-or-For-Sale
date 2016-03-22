@@ -4,32 +4,6 @@
   <label class='for-university-students'>For University Students</label>
   <br>
 
-    <div class="guest-sign-in-laurie">
-      <form action="<%= session_url %>" method="post" class="auth_token">
-
-        <input
-        type="hidden"
-        name="authenticity_token"
-        id=""
-        value="<%= form_token %>">
-
-
-        <input
-        type="hidden"
-        name="user[username]"
-        id="user_username"
-        value="laurieou">
-
-
-        <input
-        type="hidden"
-        name="user[password]"
-        id="user_password"
-        value="laurie">
-
-        <input type="submit"  class="guest-sign-in-laurie-button" value="Demo Sign In as Laurie">
-      </form>
-    </div>
 
 <div class="auth-container-sign-in">
 
@@ -56,6 +30,33 @@
 
           <input type="submit" value="Sign In">
         </form>
+
+        <div class="guest-sign-in-laurie">
+          <form action="<%= session_url %>" method="post" class="auth_token">
+
+            <input
+            type="hidden"
+            name="authenticity_token"
+            id=""
+            value="<%= form_token %>">
+
+
+            <input
+            type="hidden"
+            name="user[username]"
+            id="user_username"
+            value="laurieou">
+
+
+            <input
+            type="hidden"
+            name="user[password]"
+            id="user_password"
+            value="laurie">
+
+            <input type="submit"  class="guest-sign-in-laurie-button" value="Demo Sign In as Laurie at UCLA">
+          </form>
+        </div>
     </div>
 
 
