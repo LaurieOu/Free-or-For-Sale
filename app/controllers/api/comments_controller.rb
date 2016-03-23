@@ -4,7 +4,11 @@ class Api::CommentsController < ApplicationController
 
     @comment = Comment.new(input_hash)
     if @comment.save
-      @listings = Listing.where(category_id: comment_params[:category_id])
+      if comment_params[:page] == "Home"
+        @listings = Listing.all
+      else
+        @listings = Listing.where(category_id: comment_params[:category_id])
+      end
       render "api/listings/index"
     else
       render json: {}, status: 420
@@ -14,6 +18,6 @@ class Api::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :listing_id, :category_id)
+    params.require(:comment).permit(:body, :listing_id, :category_id, :page)
   end
 end

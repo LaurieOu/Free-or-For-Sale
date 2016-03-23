@@ -15,8 +15,6 @@ var routes = (
   <Route path="/" component={App} >
     <Route path=":category" component={FormAndListings} />
   </Route>
-
-
 );
 
 

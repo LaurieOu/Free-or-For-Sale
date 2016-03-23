@@ -119,10 +119,10 @@ var Listings = React.createClass({
   handleLikeClick: function(e) {
     e.preventDefault();
     if (ListingsStore.hasLike(e.target.id) ) {
-      apiUtil.deleteLike({listing_id: e.target.id, category_id: _categoriesToID[this.props.category]});
+      apiUtil.deleteLike({listing_id: e.target.id, category_id: _categoriesToID[this.props.category], page: this.props.category});
       this.setState({liked: true});
     } else {
-      apiUtil.createLike({listing_id: e.target.id, category_id: _categoriesToID[this.props.category]});
+      apiUtil.createLike({listing_id: e.target.id, category_id: _categoriesToID[this.props.category], page: this.props.category});
       // this.state.liked = false;
       this.setState({liked: false});
     }
@@ -167,7 +167,7 @@ var Listings = React.createClass({
                           <label>Comments: </label>
                           {that.displayComments(listing)}
                           <br/>
-                          <NewComment onNewComment={that.onNewComment} listing_id={listing.id} category_id={listing.category_id}/>
+                          <NewComment onNewComment={that.onNewComment} listing_id={listing.id} category_id={listing.category_id} page={that.props.category}/>
                         </div>
 
                     </li>
