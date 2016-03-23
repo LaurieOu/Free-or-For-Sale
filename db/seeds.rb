@@ -32,7 +32,7 @@ User.create!([
   {username: "MarkCuban", email: "daron.wiza@klein.net", password_digest: "$2a$10$RIDTBFFOgfflOofgQTnx0ejsxn47HO9TOYo1erhNqfUn4ZcGAlPqa", session_token: "hSeBOMzMb7AsaFLFW6eRkQ", university_id: 2, image: "http://i.huffpost.com/gen/1717888/images/o-MARK-CUBAN-SHARK-TANK-facebook.jpg"},
   {username: "Mr.Wonderful", email: "rahul.feeney@mraz.name", password_digest: "$2a$10$j.4SfA3dj7sYGKDFoYd9.u5jr9f6fBojJ8k3GbEEgo.ibDYiffCDG", session_token: "TQ0h2PdYscbI16d10MAG-w", university_id: 2, image: "http://www.ctv.ca/getattachment/fda58e7f-a141-4da6-80ff-3a8e28148d3d/SharkTank/Cast/Kevin-O-Leary.aspx/634522092767530000"},
   {username: "LaurieGreiner", email: "adonis@gleichner.info", password_digest: "$2a$10$gILGb2Q2.Xos1pMRh1WnueeOtAtwVdvYU9d3Eq7dT1/DCsDZOz3/6", session_token: "NVDc_XKpxLuUKNnHnt1MnA", university_id: 5, image: "https://assets.entrepreneur.com/content/16x9/822/lori-greiner-invention-store-shelves.jpg"},
-  {username: "RobertHerjavec", email: "lera_daugherty@jacobihilll.net", password_digest: "$2a$10$IOQBo7j.yVf5Asy/G.NPre5TuflktrbCBIz1lr7Dug9XR4pGB0yVi", session_token: "Jq8ERepTT55oSDnSYocoTw", university_id: 5, image: "http://www.ctv.ca/getattachment/28023df4-b3f0-47e5-b7cf-ecd4314ec3bb/SharkTank/Cast/Robert-Herjavec.aspx/634522091652030000"},
+  {username: "Jen", email: "lera_daugherty@jacobihilll.net", password_digest: "$2a$10$IOQBo7j.yVf5Asy/G.NPre5TuflktrbCBIz1lr7Dug9XR4pGB0yVi", session_token: "Jq8ERepTT55oSDnSYocoTw", university_id: 5, image: "http://www.thelegendarytrend.com/wp-content/uploads/2016/03/jennifer_lawrence_look_smile_81669_3840x2160.jpg"},
   {username: "charity", email: "stanford@hickleledner.biz", password_digest: "$2a$10$110DlM0sHLx9MPginhXbs.OEQQWa3FKngZ8qU4WYy9gnCStCqlSu6", session_token: "j2RSK7vysbbV3SklaPzm5Q", university_id: 1},
   {username: "tyreek_padberg", email: "reid_jones@leuschke.biz", password_digest: "$2a$10$81pLROIpU0RUy.Sk0rn2WeQ74Hs7yAjtRQy.atpqgCPm77dKzUWwC", session_token: "af1igLQfncaDYGT4mKWJtA", university_id: 2},
   {username: "cornelius", email: "nick_hammes@volkman.io", password_digest: "$2a$10$uaYAIpLkr93.r8Ki9E.yteVm6Vj7CDMEi/mnDR60zpAQUW1Hhk.Du", session_token: "VSfZ8XiW8eZNWh2oGq5RZw", university_id: 4},
@@ -122,7 +122,8 @@ Listing.create!([
   {title: "Grand piano", description: "makes beautiful sound", price: 500, university_id: 1, category_id: 9, user_id: 21, archived: true},
   {title: "Looking for job", description: "Will do work for money", price: 0, university_id: 1, category_id: 8, user_id: 22, archived: true},
   {title: "Stuffed animals", description: "If you just need somebody to hug", price: 15, university_id: 1, category_id: 10, user_id: 23, archived: true},
-  {title: "Wedding gowns", description: "By Vera Wang", price: 15000, university_id: 1, category_id: 4, user_id: 24, archived: true}
+  {title: "Wedding gowns", description: "By Vera Wang", price: 15000, university_id: 1, category_id: 4, user_id: 24, archived: true},
+  {title: "Laughter", description: "Don't worry, be happy.", price: 0, university_id: 1, category_id: 6, user_id: 25, archived: true}
 
   ])
 
@@ -216,5 +217,7 @@ Image.create!([
   {listing_id: 24, url: "http://www.tsumtsumcentral.com/assets/img/upload/f625/PoshPawsTangledPreview_1.jpg"},
   {listing_id: 24, url: "http://ecx.images-amazon.com/images/I/51pR-pYNmNL.jpg"},
   {listing_id: 25, url: "http://423492106503fbf03a79-cfef2651b6c6ce3093cfde54a26719d2.r14.cf2.rackcdn.com/veraunveiled/wp-content/uploads/2015/08/sarah-jessica-parker-sex-and-the-city-movie-vera-wang-still-559.jpg"},
-  {listing_id: 25, url: "http://www.oncewed.com/wp-content/dressListingsPhotos/2012Theme/173188/Vera-Wang-Wedding-Dress.jpg"}
+  {listing_id: 25, url: "http://www.oncewed.com/wp-content/dressListingsPhotos/2012Theme/173188/Vera-Wang-Wedding-Dress.jpg"},
+  {listing_id: 26, url: "https://wallpaperscraft.com/image/friends_girls_guy_happiness_laughter_67513_2560x1600.jpg"},
+  {listing_id: 26, url: "https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/23361/area14mp/rw9xqn6s-1367993109.jpg"}
   ])
