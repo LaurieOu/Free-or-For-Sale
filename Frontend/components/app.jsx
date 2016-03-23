@@ -1,9 +1,8 @@
 var React = require('react');
 var LoginBar = require('./navigation/login');
 var Categories = require('./categories/categories');
-var NewListingForm = require('./Listings/newListing');
+var FormAndListings = require('./Listings/formAndListings');
 var browserHistory = require('react-router').browserHistory;
-var Listings = require('./Listings/listings');
 
 
 var App = React.createClass({
