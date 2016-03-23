@@ -1,12 +1,10 @@
 class Api::LikesController < ApplicationController
   def create
-    input_hash = {user_id: current_user.id}
-    inputParams = like_params.merge(input_hash)
-    inputParams["listing_id"] = inputParams["listing_id"].to_i
+    input_hash = {user_id: current_user.id, listing_id: like_params["listing_id"].to_i}
 
-    @like = Like.new(inputParams)
+    @like = Like.new(input_hash)
     if @like.save
-      @listings = Listing.all
+      @listings = Listing.where(category_id: like_params[:category_id])
       render "api/listings/index"
     else
       render json: {errors: @like.errors.full_messages}, status: 420
@@ -14,20 +12,16 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    input_hash = {user_id: current_user.id, listing_id: params[:id]}
-
-
-    @like = Like.where(input_hash).first
-    @like.destroy
-    @likes = Like.all
-    @listings = Listing.all
-    render "api/listings/index"
+        @like = Like.where(user_id: current_user.id, listing_id: like_params["listing_id"].to_i).first
+        @like.destroy
+        @listings = Listing.where(category_id: like_params[:category_id])
+        render "api/listings/index"
   end
 
   private
 
   def like_params
-    params.require(:like).permit(:listing_id)
+    params.require(:like).permit(:listing_id, :category_id)
   end
 end
 

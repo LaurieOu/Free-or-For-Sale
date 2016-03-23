@@ -5,6 +5,18 @@ var NewComment = require('../comments/newComment');
 var browserHistory = require('react-router').browserHistory;
 var ImageGallery = require('react-image-gallery');
 
+_categoriesToID = {
+  "Books": 1,
+  "Furniture": 2,
+  "Housing": 3,
+  "Clothes": 4,
+  "Electronics": 5,
+  "Free": 6,
+  "Services": 7,
+  "Jobs": 8,
+  "Music": 9,
+  "Other": 10
+};
 
 var Listings = React.createClass({
   getInitialState: function() {
@@ -27,7 +39,7 @@ var Listings = React.createClass({
     if (listing.images === undefined) {
       return;
     }
-    
+
       return (
       <ul>
         {listing.comments.map(function(comment) {
@@ -107,10 +119,10 @@ var Listings = React.createClass({
   handleLikeClick: function(e) {
     e.preventDefault();
     if (ListingsStore.hasLike(e.target.id) ) {
-      apiUtil.deleteLike({listing_id: e.target.id});
+      apiUtil.deleteLike({listing_id: e.target.id, category_id: _categoriesToID[this.props.category]});
       this.setState({liked: true});
     } else {
-      apiUtil.createLike({listing_id: e.target.id});
+      apiUtil.createLike({listing_id: e.target.id, category_id: _categoriesToID[this.props.category]});
       // this.state.liked = false;
       this.setState({liked: false});
     }

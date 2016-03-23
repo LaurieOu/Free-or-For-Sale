@@ -59,6 +59,7 @@ var apiUtil = {
     $.ajax({
       url: 'api/likes/' + newLike.listing_id,
       type: 'DELETE',
+      data: {like: newLike},
       success: function (listings) {
         ApiActions.receiveAllListings(listings);
       }
