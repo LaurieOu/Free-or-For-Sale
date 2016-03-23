@@ -13,7 +13,7 @@ var NewComment = React.createClass({
 
   submitComment: function(e) {
     e.preventDefault();
-    apiUtil.createComment({body: this.state.comment, listing_id: this.props.listing_id})
+    apiUtil.createComment({body: this.state.comment, listing_id: this.props.listing_id, category_id: this.props.category_id})
     // this.props.onNewComment(e);
     this.setState({comment: ""});
   },

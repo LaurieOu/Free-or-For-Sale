@@ -167,7 +167,7 @@ var Listings = React.createClass({
                           <label>Comments: </label>
                           {that.displayComments(listing)}
                           <br/>
-                          <NewComment onNewComment={that.onNewComment} listing_id={listing.id}/>
+                          <NewComment onNewComment={that.onNewComment} listing_id={listing.id} category_id={listing.category_id}/>
                         </div>
 
                     </li>

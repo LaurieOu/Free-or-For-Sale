@@ -1,12 +1,10 @@
 class Api::CommentsController < ApplicationController
   def create
-    input_hash = {user_id: current_user.id}
-    inputParams = comment_params.merge(input_hash)
+    input_hash = {user_id: current_user.id, body: comment_params[:body], listing_id: comment_params[:listing_id]}
 
-
-    @comment = Comment.new(inputParams)
+    @comment = Comment.new(input_hash)
     if @comment.save
-      @listings = Listing.all
+      @listings = Listing.where(category_id: comment_params[:category_id])
       render "api/listings/index"
     else
       render json: {}, status: 420
@@ -16,6 +14,6 @@ class Api::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :listing_id)
+    params.require(:comment).permit(:body, :listing_id, :category_id)
   end
 end
