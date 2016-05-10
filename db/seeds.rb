@@ -23,7 +23,7 @@ User.create!([
   {username: "AnnaKendrick", email: "glennie@luettgenhuels.net", password_digest: "$2a$10$DoXuMhd28f1fmwQyBh5.XuHIxPw61U9DHDfTnjpBseHepi4Hx/wMy", session_token: "gt6d8eUpJ0bp9wOBYpPfxQ", university_id: 2, image: "http://cdn2-www.craveonline.com/assets/uploads/2014/12/Into-the-Woods-Anna-Kendrick.jpg"},
   {username: "Halsey", email: "camille_heaney@stanton.io", password_digest: "$2a$10$OJ0XGa3e4yR7qy71zQcdC.YUd6UVaGpautnSAnLuC1B0zEuO1CopC", session_token: "32hgwFz1rKeesmcfB6d1aQ", university_id: 2, image: "http://ell.h-cdn.co/assets/15/20/980x490/landscape-1431357851-elle-womeninmusic-halsey.jpg"},
   {username: "cutieChris", email: "caterina_willms@deckow.net", password_digest: "$2a$10$XxKAgHFDGABtSAb4VlTfles3OvJfbh7BAOInV4Zfb68EJTogx7jpm", session_token: "oUIMDa9_zgduQwj5UDtnyg", university_id: 2, image: "https://pbs.twimg.com/profile_images/680301383979958272/3rx5gnK0.jpg"},
-  {username: "SherlockHolmes", email: "kiera@grahamsimonis.io", password_digest: "$2a$10$Wzj6ngXY01x6K.x9UM8zKexgVnevu1jGXeJS30b1fF5GXes2Ln9WW", session_token: "_qoYeTD2XHIisa6j2jRS_w", university_id: 4, image: "http://matthewkadish.com/wp-content/uploads/2014/05/Benedict.jpg"},
+  {username: "SherlockHolmes", email: "kiera@grahamsimonis.io", password_digest: "$2a$10$Wzj6ngXY01x6K.x9UM8zKexgVnevu1jGXeJS30b1fF5GXes2Ln9WW", session_token: "_qoYeTD2XHIisa6j2jRS_w", university_id: 4, image: "http://i.telegraph.co.uk/multimedia/archive/02252/Benedict-Cumberbat_2252929b.jpg"},
   {username: "Heisenberg", email: "curtis@wisoky.info", password_digest: "$2a$10$rHY9OI2ZkJT2MyzsqPTQSuEAOILm.8cg85lEz/PGRPZVwK6tu3pPu", session_token: "9M86hoSLxPeV6tJat_eK7w", university_id: 4, image: "http://www.konbini.com/us/wp-content/blogs.dir/9/files/2015/11/heisenberg.jpeg"},
   {username: "JessePinkman", email: "pierre.hilpert@parker.com", password_digest: "$2a$10$SH9rcKibAYRE/K/thKekw.ia.0G071gNgNn5nPh/x2TZhVZXBx6LS", session_token: "hbGdT0FFA6aii-U8QXWr-Q", university_id: 5, image: "http://vignette4.wikia.nocookie.net/villains/images/5/55/Jesse_Pinkman.jpg/revision/latest?cb=20130826002521"},
   {username: "Jessica", email: "stevie@leannonpadberg.info", password_digest: "$2a$10$Jd6b5yMh/niiQ3qj3FS4sesXlVnoZahpAtyn7qKjPR5iO7c.6NTbC", session_token: "4jjGZtx4K5dGTL9LJlAWew", university_id: 2, image: "http://24.media.tumblr.com/tumblr_m2wsbqfcOt1qfk6eto1_500.jpg"},
@@ -160,7 +160,6 @@ Like.create!([
 
 Image.create!([
   {listing_id: 1, url: "https://upload.wikimedia.org/wikipedia/en/b/b0/Gatsby_1925_jacket.gif"},
-  {listing_id: 1, url: "http://askjohnkremer.com/wp-content/uploads/2011/04/college-textbooks.png"},
   {listing_id: 1, url: "http://harrypotteraudiobooks.org/wp-content/uploads/2015/10/harry-potter-audiobooks.jpg"},
   {listing_id: 1, url: "http://cdn.shopify.com/s/files/1/0764/0187/products/920_How_To_Be_Interesting_grande.JPG?v=1431029718"},
   {listing_id: 2, url: "http://abeachcottage.com/wp-content/uploads/2013/08/20130822-01-ikea-foto-light-abeachcottage.com-hanging-pendant-lighting-lights-.jpg"},
@@ -172,7 +171,7 @@ Image.create!([
   {listing_id: 4, url: "http://data1.whicdn.com/images/14944908/tumblr_lrpy1mMsRL1r31i71o1_500_large.jpg"},
   {listing_id: 4, url: "http://40.media.tumblr.com/tumblr_m7xfdvPW1U1r0gq4mo1_500.png"},
   {listing_id: 4, url: "http://40.media.tumblr.com/9dc5b16d239f996b0ac859a35313502e/tumblr_mhmg9wxAHZ1r44qrfo1_1280.jpg"},
-  {listing_id: 5, url: "http://photos2.appleinsidercdn.com/iPodNano7.101212.001.jpg"},
+  {listing_id: 5, url: "http://3219a2.medialib.glogster.com/media/42/42e9156bb7397ae53e3beae386a82073104d26d172045295e37a23f75cb8ce6b/ipod1.jpg"},
   {listing_id: 6, url: "http://www.southernhillsanimalhospital.com/sites/site-1450/images/kittens.jpg"},
   {listing_id: 6, url: "http://doublemesh.com/wp-content/uploads/2013/11/Curious-Kittens-Wallpaper-1.jpg"},
   {listing_id: 6, url: "http://36.media.tumblr.com/2abf01e36ebfeebd2fb92245e3562df6/tumblr_mtzpn3giYX1simh4uo1_1280.jpg"},
@@ -180,7 +179,6 @@ Image.create!([
   {listing_id: 8, url: "http://graphics8.nytimes.com/images/2004/08/13/obituaries/child.cook.583.jpg"},
   {listing_id: 8, url: "http://planet47.si/images/articles/PrehranapriDownovemsindromu_si_5.jpg"},
   {listing_id: 8, url: "http://img.clasf.co/2015/07/02/Cali-Vendo-Fabrica-de-Helados-y-Cremas-y-Su-Punto-de-Venta-20150702211957.jpg"},
-  {listing_id: 9, url: "https://i.ytimg.com/vi/L6T6_ZFreMU/maxresdefault.jpg"},
   {listing_id: 9, url: "http://www.peoplegreece.com/wp-content/uploads/2016/02/16/grammy-2016-taylor-swift.jpg"},
   {listing_id: 10, url: "https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s640x640/sh0.08/e35/12331809_1835804949979499_801447339_n.jpg"},
 
@@ -212,7 +210,7 @@ Image.create!([
   {listing_id: 21, url: "http://guardianlv.com/wp-content/uploads/2014/02/Robot-Inventions-Shape-the-World.jpg"},
   {listing_id: 22, url: "http://charlottesvillepiano.com/wp-content/uploads/2016/02/steinway_grand_pianos_c.jpg"},
   {listing_id: 22, url: "http://img13.deviantart.net/c1c4/i/2008/126/0/f/grand_piano_by_wolfgirl17591.jpg"},
-  {listing_id: 23, url: "http://www.cornellcurrent.com/wp-content/uploads/2014/11/looking-for-job-sign.jpg"},
+  {listing_id: 23, url: "https://nomorehomelessyouth.files.wordpress.com/2015/07/stock-footage-homeless-hold-out-a-tin-and-a-cardboard-with-a-sign.jpg"},
   {listing_id: 24, url: "http://answers.getwashio.com/wp-content/uploads/2014/08/washing-stuffed-animals-1728x800_c.jpg"},
   {listing_id: 24, url: "http://www.tsumtsumcentral.com/assets/img/upload/f625/PoshPawsTangledPreview_1.jpg"},
   {listing_id: 24, url: "http://ecx.images-amazon.com/images/I/51pR-pYNmNL.jpg"},

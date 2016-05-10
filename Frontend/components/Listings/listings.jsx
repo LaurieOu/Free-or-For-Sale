@@ -72,7 +72,7 @@ var Listings = React.createClass({
     }
 
     var defaultImages = ["http://cdn.paper4pc.com/images/nature-animals-dogs-puppies-wallpaper-3.jpg",
-                      "http://www.pics4world.com/vb/nicecache/2/6061showing.jpg",
+                      "https://pbs.twimg.com/profile_images/378800000831249044/effb57c08b2f5783c686b589d84d2b92.jpeg",
                     "http://2.bp.blogspot.com/-4HwmYrSvBNs/U_RJt0Gz1gI/AAAAAAAAC7U/j7wyHx83-fQ/s1600/nature-animals-47.jpg"];
 
     if (listing.images.length === 0) {
