@@ -31,6 +31,8 @@ var Listings = React.createClass({
   },
   componentWillReceiveProps: function(newProps) {
     apiUtil.fetchListingsFromCategory(newProps.category);
+    // var contentEl = $('.form-listing-container');
+    // contentEl.scrollTop(0);
   },
   componentWillUnmount: function() {
     this.listingsListener.remove();

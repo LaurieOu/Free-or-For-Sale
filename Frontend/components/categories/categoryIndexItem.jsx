@@ -1,13 +1,12 @@
 var React = require('react');
 var browserHistory = require('react-router').browserHistory;
 
-
-
 var CategoryIndexItem = React.createClass({
   handleClick: function(e) {
     e.preventDefault();
     browserHistory.push(this.props.category.category_name);
-
+    var contentEl = $('.form-listing-container');
+    contentEl.scrollTop(0);
   },
   render: function() {
     return(

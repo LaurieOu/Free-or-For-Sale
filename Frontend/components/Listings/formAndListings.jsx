@@ -38,8 +38,6 @@ var FormAndListing = React.createClass({
       </div>);
     }
 
-
-
     return (
       <div className="form-listing-container">
         {universityLogo}
